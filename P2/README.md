@@ -20,21 +20,20 @@ A escolha específica pela doença causada pelo novo coronavírus (SARS-CoV-2) f
 
 Por conseguinte, informações sobre diversos aspectos da COVID-19 - o que fazer em caso de exposição, sintomas associados e grupos de risco, por exemplo -, podem ser encontradas com relativa facilidade em fontes confiáveis, como sites de organizações competentes, autoridades da área de saúde e jornais.
 
-A Organização Mundial da Saúde (OMS), ou World Health Organization (WHO), define em seu Q&A (Questions and Answers), atualizado pela última vez em 13 de março de 2021, que o tempo desde a exposição ao vírus até a manifestação dos sintomas é, em média, de 5 a 6 dias, podendo variar de 1 a 14 dias. Ademais, a OMS aconselha que pessoas expostas ao SARS-CoV-2 fiquem isoladas por 14 dias a fim de evitar a propagação do vírus.
+A Organização Mundial da Saúde (OMS), ou World Health Organization (WHO), define em seu Q&A (Questions and Answers) [1], atualizado pela última vez em 13 de março de 2021, que o tempo desde a exposição ao vírus até a manifestação dos sintomas é, em média, de 5-6 dias, podendo variar de 1-14 dias. Ademais, a OMS aconselha que pessoas expostas ao SARS-CoV-2 fiquem isoladas por 14 dias a fim de evitar a propagação do vírus.
 
 Desse modo, considerando o tempo máximo desde a exposição até a manifestação dos sintomas e o tempo indicado de isolamento em caso de exposição, optamos por analisar a morte de pacientes até 30 dias após a data do diagnóstico.
 
 
 ## Ferramentas
-* `Python 3` [2] - linguagem de programação utilizada para desenvolver o código para exploração e tratamento de dados. 
-    * `pandas` [3] - biblioteca do Python usada para manipular e analisar o conjunto de dados.
-* `Google Colab` - empregado para desenvolver e executar os códigos em Python em um notebook.
-* `Google Drive` - utilizado para armazenar o notebook do Colab e os arquivos CSV com os dados manipulados nesse notebook.
+* `Python 3` [2] - linguagem de programação utilizada para desenvolver os códigos para exploração, tratamento de dados e análise dos resultados.
+    * `pandas` [3] - biblioteca do Python usada para manipular e analisar as bases dados e os resultados.
+* `Google Colab` - empregado para desenvolver e executar os códigos em Python em notebooks.
+* `Google Drive` - utilizado para armazenar os notebooks do Colab e os arquivos CSV com as bases de dados e os resultados.
 * `Orange` [4] - empregado no desenvolvimento e análise dos resultados dos modelos de predição.
 
 
 # Metodologia
-
 > Abordagem adotada pelo projeto na predição.
 > Justificar as escolhas e (opcionalmente) apresentar fundamentos teóricos.
 
@@ -46,7 +45,6 @@ Desse modo, considerando o tempo máximo desde a exposição até a manifestaç�
 
 
 # Resultados Obtidos
-
 > Esta seção pode opcionalmente ser apresentada em conjunto com a metodologia, intercalando método e resultados.
 >
 > Descreva etapas para obtenção do modelo, incluindo tratamento de dados, se houve.
@@ -67,21 +65,21 @@ Desse modo, considerando o tempo máximo desde a exposição até a manifestaç�
 >     * como analisar e interpretar as diferenças?
 > * testar diferentes composições de dados sobre o paciente para a predição (por exemplo, quantidade diversificadas de número de itens).
 
-# Evolução do Projeto
 
+# Evolução do Projeto
 > Seção opcional se houver histórico de mudanças e evolução relevantes.
 > Relate aqui a evolução do projeto: possíveis problemas enfrentados e possíveis mudanças de trajetória. Relatar o processo para se alcançar os resultados é tão importante quanto os resultados.
 
-# Discussão
 
+# Discussão
 > Fazer um breve debate sobre os resultados alcançados. Aqui pode ser feita a análise dos possíveis motivos que certos resultados foram alcançados. Por exemplo:
 > * por que seu modelo alcançou (ou não) um bom resultado?
 > * por que o modelo de um cenário não se desempenhou bem em outro?
 >
 > A discussão dos resultados também pode ser feita opcionalmente na seção de Resultados, na medida em que os resultados são apresentados. Aspectos importantes a serem discutidos: É possível tirar conclusões dos resultados? Quais? Há indicações de direções para estudo? São necessários trabalhos mais profundos?
 
-# Conclusão
 
+# Conclusão
 > Destacar as principais conclusões obtidas no desenvolvimento do projeto.
 >
 > Destacar os principais desafios enfrentados.
@@ -91,8 +89,8 @@ Desse modo, considerando o tempo máximo desde a exposição até a manifestaç�
 > Trabalhos Futuros:
 > * o que poderia ser melhorado se houvesse mais tempo?
 
-# Referências Bibliográficas
 
+# Referências Bibliográficas
 [[1]](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19) World Health Organization (WHO) - COVID-19 Q&A.
 
 [[2]](https://docs.python.org/3/) Python Documentation.
