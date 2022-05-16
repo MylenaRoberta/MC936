@@ -1,8 +1,7 @@
-# Projeto `Predizendo Prognóstico de Mortalidade por COVID-19 com Dados Sintéticos`
-# Project `Predicting COVID-19 Mortality Prognosis with Syntetic Data`
+# Projeto Predizendo Prognóstico de Mortalidade por COVID-19 com Dados Sintéticos
+# Project Predicting COVID-19 Mortality Prognosis with Syntetic Data
 
 # Apresentação
-
 O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação [*Ciência e Visualização de Dados em Saúde*](https://ds4h.org), oferecida no primeiro semestre de 2022, na Unicamp.
 
 | Nome                       | RA     | Especialização |
@@ -11,15 +10,27 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 | Jhonatan Cléto             | 256444 | Computação     |
 | Mylena Roberta dos Santos  | 222687 | Computação     |
 
-# Contextualização da Proposta
 
-> Apresentação da proposta de predição indicando os parâmetros adotados para a mesma com a justificativa (por que esses parâmetros foram adotados?).
-> O ideal é que a proposta seja apresentada como uma pergunta de pesquisa.
+# Contextualização da Proposta
+A proposta de predição adotada foi a seguinte:
+
+> Dado um paciente com COVID-19, qual é a probabilidade dele morrer em até 30 dias após a data do diagnóstico?
+
+A escolha específica pela doença causada pelo novo coronavírus (SARS-CoV-2) foi motivada pela pandemia em curso enfrentada por todo o mundo. O contexto que estamos vivenciando atualmente deu destaque para essa enfermidade, incentivando a realização e a ampla divulgação de pesquisas acadêmicas relacionadas a ela. 
+
+Por conseguinte, informações sobre diversos aspectos da COVID-19 - o que fazer em caso de exposição, sintomas associados e grupos de risco, por exemplo -, podem ser encontradas com relativa facilidade em fontes confiáveis, como sites de organizações competentes, autoridades da área de saúde e jornais.
+
+A Organização Mundial da Saúde (OMS), ou World Health Organization (WHO), define em seu Q&A (Questions and Answers), atualizado pela última vez em 13 de março de 2021, que o tempo desde a exposição ao vírus até a manifestação dos sintomas é, em média, de 5 a 6 dias, podendo variar de 1 a 14 dias. Ademais, a OMS aconselha que pessoas expostas ao SARS-CoV-2 fiquem isoladas por 14 dias a fim de evitar a propagação do vírus.
+
+Desse modo, considerando o tempo máximo desde a exposição até a manifestação dos sintomas e o tempo indicado de isolamento em caso de exposição, optamos por analisar a morte de pacientes até 30 dias após a data do diagnóstico.
 
 
 ## Ferramentas
-
-> Listagem das ferramentas utilizadas (na forma de itens).
+* `Python 3` [2] - linguagem de programação utilizada para desenvolver o código para exploração e tratamento de dados. 
+    * `pandas` [3] - biblioteca do Python usada para manipular e analisar o conjunto de dados.
+* `Google Colab` - empregado para desenvolver e executar os códigos em Python em um notebook.
+* `Google Drive` - utilizado para armazenar o notebook do Colab e os arquivos CSV com os dados manipulados nesse notebook.
+* `Orange` [4] - empregado no desenvolvimento e análise dos resultados dos modelos de predição.
 
 
 # Metodologia
@@ -29,16 +40,9 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 
 ## Bases Adotadas para o Estudo
-
-> Se só foram usadas as bases fornecidas, basta listá-las como segue:
 * scenario01
 * scenario02
-* ...
-
-> Se usou também outras bases (opcional), apresentá-las como segue:
-Base de Dados | Endereço na Web | Resumo descritivo
------ | ----- | -----
-Título da Base | http://base1.org/ | Breve resumo (duas ou três linhas) sobre a base.
+* scenario03
 
 
 # Resultados Obtidos
@@ -89,6 +93,14 @@ Título da Base | http://base1.org/ | Breve resumo (duas ou três linhas) sobre 
 
 # Referências Bibliográficas
 
-> Lista de artigos, links e referências bibliográficas (se houver).
->
-> Fiquem à vontade para escolher o padrão de referenciamento preferido pelo grupo.
+[[1]](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19) World Health Organization (WHO) - COVID-19 Q&A.
+
+[[2]](https://docs.python.org/3/) Python Documentation.
+
+[[3]](https://pandas.pydata.org/docs/) Pandas Documentation.
+
+[[4]](https://orangedatamining.com/docs/) Orange Documentation.
+
+[[5]](https://github.com/synthetichealth/synthea/wiki) Synthea Wiki.
+
+[[?]](https://doi.org/10.1016/j.ekir.2020.05.007) Komaru Y, Yoshida T, et al. Hierarchical Clustering Analysis for Predicting 1-Year Mortality After Starting Hemodialysis
