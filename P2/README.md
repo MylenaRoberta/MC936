@@ -97,8 +97,14 @@ Desse modo, considerando o tempo máximo desde a exposição até a manifestaç�
 
 [[3]](https://pandas.pydata.org/docs/) Pandas Documentation.
 
-[[4]](https://orangedatamining.com/docs/) Orange Documentation.
+[[4]](https://orangedatamining.com/docs/) Orange Data Mining Documentation.
 
 [[5]](https://github.com/synthetichealth/synthea/wiki) Synthea Wiki.
 
-[[?]](https://doi.org/10.1016/j.ekir.2020.05.007) Komaru Y, Yoshida T, et al. Hierarchical Clustering Analysis for Predicting 1-Year Mortality After Starting Hemodialysis
+[[6]](https://github.com/synthetichealth/synthea/wiki/CSV-File-Data-Dictionary) Synthea Wiki - CSV File Data Dictionary.
+
+[[7]](https://doi.org/10.1016/j.ekir.2020.05.007) Komaru Y, Yoshida T, et al. Hierarchical Clustering Analysis for Predicting 1-Year Mortality After Starting Hemodialysis.
+
+[[8]](https://en.wikipedia.org/wiki/Silhouette_(clustering)) Silhouette Score Method - Wikipedia.
+
+[[9]](https://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator) Kaplan-Meier Estimator - Wikipedia.
