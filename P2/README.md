@@ -14,23 +14,24 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 # Contextualização da Proposta
 A proposta de predição adotada foi a seguinte:
 
-> Dado um paciente com COVID-19, qual é a probabilidade dele morrer em até 30 dias após a data do diagnóstico?
+> Dado um paciente com COVID-19, qual é a probabilidade dele morrer, em decorrência dessa doença, em até 30 dias após a data do diagnóstico?
 
-A escolha específica pela doença causada pelo novo coronavírus (SARS-CoV-2) foi motivada pela pandemia em curso enfrentada por todo o mundo. O contexto que estamos vivenciando atualmente deu destaque para essa enfermidade, incentivando a realização e a ampla divulgação de pesquisas acadêmicas relacionadas a ela. 
+A escolha específica pela doença causada pelo novo coronavírus (SARS-CoV-2) foi motivada pela pandemia em curso enfrentada por todo o mundo. O contexto que estamos vivenciando desde a disseminação do vírus deu destaque a essa enfermidade, incentivando a realização e a ampla divulgação de pesquisas acadêmicas relacionadas a ela.
 
-Por conseguinte, informações sobre diversos aspectos da COVID-19 - o que fazer em caso de exposição, sintomas associados e grupos de risco, por exemplo -, podem ser encontradas com relativa facilidade em fontes confiáveis, como sites de organizações competentes, autoridades da área de saúde e jornais.
+Por conseguinte, informações sobre diversos aspectos da COVID-19 - por exemplo, o que fazer em caso de exposição, sintomas associados e grupos de risco -, podem ser encontradas com relativa facilidade em fontes confiáveis, como sites de organizações competentes, canais de comunicação de autoridades da área de saúde e jornais.
 
-A Organização Mundial da Saúde (OMS), ou World Health Organization (WHO), define em seu Q&A (Questions and Answers) [1], atualizado pela última vez em 13 de março de 2021, que o tempo desde a exposição ao vírus até a manifestação dos sintomas é, em média, de 5-6 dias, podendo variar de 1-14 dias. Ademais, a OMS aconselha que pessoas expostas ao SARS-CoV-2 fiquem isoladas por 14 dias a fim de evitar a propagação do vírus.
+A Organização Mundial da Saúde (OMS), ou World Health Organization (WHO), definiu em seu Q&A (Questions and Answers) [1], atualizado pela última vez em 13 de março de 2021, que o tempo desde a exposição ao vírus até a manifestação dos sintomas é, em média, de 5-6 dias, podendo variar de 1-14 dias. Ademais, a OMS aconselha que pessoas expostas ao SARS-CoV-2 fiquem isoladas por 14 dias a fim de evitar a propagação do vírus.
 
-Desse modo, considerando o tempo máximo desde a exposição até a manifestação dos sintomas e o tempo indicado de isolamento em caso de exposição, optamos por analisar a morte de pacientes até 30 dias após a data do diagnóstico.
+Desse modo, considerando o tempo máximo dentre a exposição ao vírus e a manifestação dos sintomas e também o tempo indicado de isolamento em caso de exposição, optamos por analisar a morte de pacientes pela COVID-19 em até 30 dias (um mês) após a data do diagnóstico.
 
 
 ## Ferramentas
-* `Python 3` [2] - linguagem de programação utilizada para desenvolver os códigos para exploração, tratamento de dados e análise dos resultados.
-    * `pandas` [3] - biblioteca do Python usada para manipular e analisar as bases dados e os resultados.
-* `Google Colab` - empregado para desenvolver e executar os códigos em Python em notebooks.
+* `Python` [2] - linguagem utilizada para desenvolver os códigos para exploração dos dados, preparação dos dados e análise dos resultados dos modelos de predição desenvolvidos. 
+    * `pandas` [3] - biblioteca do Python usada para manipular e analisar as bases de dados e os resultados dos modelos.
+* `Google Colab` - empregado para desenvolver e executar os códigos Python em notebooks.
 * `Google Drive` - utilizado para armazenar os notebooks do Colab e os arquivos CSV com as bases de dados e os resultados.
-* `Orange` [4] - empregado no desenvolvimento e análise dos resultados dos modelos de predição.
+* `Orange` [4] - kit de ferramentas empregado no desenvolvimento e análise dos resultados dos modelos de predição.
+
 
 
 # Metodologia
