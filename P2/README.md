@@ -43,7 +43,7 @@ Ao todo foram disponibilizados quatro cenários (`scenario01`, `scenario02`, `sc
 | scenario01 | 1174   | 10 anos | Massachusetts | Diversas |
 | scenario02 | 1121   | 10 anos | Alaska        | Juneau   |
 | scenario03 | 11573  | 10 anos | Washington    | Diversas |
-| scenario04 | 117531 | 10 anos | Massachusetts | Diversas |
+| scenario04 | 117531 | 10 anos | Massachusetts | Diversas |  
 *Tabela 1 - Informações sobre os cenários gerados pelo Synthea que foram disponibilizados.*
 
 Antes de definirmos quais dados dos cenários adotados seriam empregados no projeto, determinamos como seriam desenvolvidos os modelos de predição. Sendo que optamos pelo uso de técnicas de aprendizagem de máquina não supervisionada para tal, em específico, escolhemos a Clusterização Hierárquica e também a Clusterização K-means. 
@@ -60,7 +60,7 @@ Voltando aos cenários de históricos médicos, segue que cada um conta com os d
 | `encounters.csv`    | Dados de encontro do paciente                          |
 | `immunizations.csv` | Dados de imunização do paciente                        |
 | `patients.csv`      | Dados demográficos do paciente                         |
-| `procedures.csv`    | Dados de procedimento do paciente, incluindo cirurgias |
+| `procedures.csv`    | Dados de procedimento do paciente, incluindo cirurgias |  
 *Tabela 2 - Descrições dos arquivos CSV das tabelas adotadas como base para o estudo.*
 
 Com as bases de estudo definidas, avançamos para a preparação de dados que pode ser encontrada no notebook [`data_processing_COVID_19_patients.ipynb`](notebooks/data_processing_COVID_19_patients.ipynb). De início, partindo das tabelas de `conditions`, selecionamos os `IDs` dos pacientes que foram diagnosticados com COVID-19, chegando a 86, 96 e 950 indivíduos com essa condição em, respectivamente, `scenario01`, `scenario02` e `scenario03`. Tomando esses identificadores, filtramos os dados das demais tabelas, reduzindo o escopo da análise somente aos pacientes que tiveram COVID-19.
