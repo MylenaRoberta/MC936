@@ -2,6 +2,7 @@
 # Project Predicting COVID-19 Mortality Prognosis with Syntetic Data
 
 # Apresentação
+
 O presente projeto foi originado no contexto das atividades da disciplina de pós-graduação [*Ciência e Visualização de Dados em Saúde*](https://ds4h.org), oferecida no primeiro semestre de 2022, na Unicamp.
 
 | Nome                       | RA     | Especialização |
@@ -12,6 +13,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 
 # Contextualização da Proposta
+
 A proposta de predição adotada foi a seguinte:
 
 > Dado um paciente com COVID-19, qual é a probabilidade dele morrer, em decorrência dessa doença, em até 30 dias após a data do diagnóstico?
@@ -26,6 +28,7 @@ Desse modo, considerando o tempo máximo dentre a exposição ao vírus e a mani
 
 
 ## Ferramentas
+
 * `Python` [2] - linguagem utilizada para desenvolver os códigos para exploração dos dados, preparação dos dados e análise dos resultados dos modelos de predição desenvolvidos. 
     * `pandas` [3] - biblioteca do Python usada para manipular e analisar as bases de dados e os resultados dos modelos.
 * `Google Colab` - empregado para desenvolver e executar os códigos Python em notebooks.
@@ -34,6 +37,7 @@ Desse modo, considerando o tempo máximo dentre a exposição ao vírus e a mani
 
 
 # Metodologia
+
 Ao definirmos a proposta de predição, partimos para o estudo dos conjuntos de dados disponibilizados para a execução do projeto. Tais conjuntos são resultantes do Synthea (Synthetic Patient Population Simulator) [5], um gerador de pacientes sintéticos que modela o histórico médico desses pacientes. O projeto desse gerador tem como objetivo produzir dados sintéticos, realistas (mas não reais), de pacientes e registros de saúde associados em vários formatos. Sendo que os dados gerados por ele são livres de custo, privacidade e restrições de segurança.
 
 Ao todo foram disponibilizados quatro cenários (`scenario01`, `scenario02`, `scenario03` e `scenario04`) de históricos médicos de pacientes sintéticos. Todavia, optamos por trabalhar com somente três deles ([`scenario01`](data/raw/scenario01.zip), [`scenario02`](data/raw/scenario02.zip) e [`scenario03`](data/raw/scenario03.zip)), pois o cenário restante conta com um volume de dados incompatível com poder de processamento das ferramentas com as quais escolhemos trabalhar (vide a Tabela 1).
@@ -85,7 +89,7 @@ Sendo que as colunas `LAST ENCOUNTERS OR DIED DATE` e `TIME (DAYS)` foram conceb
 
 Após a remoção das variáveis menos relevantes e a adição de dados que seriam utilizados pelos modelos de predição, visando a maneira como os dados são consumidos pelo Orange, concatenamos, para cada cenário, os dados de todos pacientes diagnosticados com COVID-19  em uma tabela. De modo que a concatenação citada resultou do *merge* entre as tabelas `patients`, `conditions`, `immunizations` e `procedures`.
 
-Isto é, ao final da preparação de dados, geramos as tabelas: links das tabelas resultantes. Cada linha das tabelas corresponde a um determinado paciente e cada coluna corresponde a uma variável relacionada ao paciente em questão, podendo representar dados textuais, numéricos ou booleanos. Especificamente sobre as colunas com dados booleanos, elas correspondem a uma descrição (`DESCRIPTION`) de `conditions`, `immunizations` ou `procedures` e apresentam `1` se o paciente tem a condição tratada, foi imunizado pela vacina específica ou passou pelo procedimento em questão.
+Isto é, ao final da preparação de dados, geramos as tabelas: links das tabelas resultantes. Cada linha das tabelas corresponde a um determinado paciente e cada coluna corresponde a uma variável relacionada ao paciente em questão, podendo representar dados textuais, numéricos ou booleanos. Especificamente sobre as colunas com dados booleanos, elas correspondem a uma descrição (`DESCRIPTION`) de `conditions`, `immunizations` ou `procedures` e apresentam 1 se o paciente tem a condição tratada, foi imunizado pela vacina específica ou passou pelo procedimento em questão.
 
 
 ## Bases Adotadas para o Estudo
@@ -122,11 +126,13 @@ Antes mesmo de propriamente começarmos o projeto, enfrentamos uma grande dificu
 
 De início, estávamos muito presos aos dados em questões quantitativas, de modo que, sempre que levantávamos uma pergunta de pesquisa, acreditávamos que os dados fornecidos, nos dois primeiros cenários, não eram suficientes para explorar a proposta. Assim, após discutirmos algumas perguntas e continuarmos sentindo a mesma sensação de insuficiência de dados, solicitamos ajuda ao Prof. André Santanchè. Após a conversa com o professor, melhor orientados, conseguimos desapegar dos aspectos quantitativos dos dados e retornar a uma pergunta de pesquisa que já havíamos discutido, abordando o tema da COVID-19.
 
-Com o assunto definido, após debatermos sobre o período de tempo que seria adotado para realizar a predição, chegamos ao intervalo de um mês e adotamos a seguinte pergunta: Dado um paciente com COVID-19, qual é a probabilidade dele morrer, em decorrência dessa doença, em até 30 dias após a data do diagnóstico?
+Com o assunto definido, após debatermos sobre o período de tempo que seria adotado para realizar a predição, chegamos ao intervalo de um mês e adotamos a seguinte pergunta: 
+
+> Dado um paciente com COVID-19, qual é a probabilidade dele morrer, em decorrência dessa doença, em até 30 dias após a data do diagnóstico?
 
 Com uma proposta de predição bem definida, esperávamos que a etapa de preparação de dados desse projeto fosse mínima. Uma vez que acreditávamos que o Orange trabalhasse bem com os dados no formato que foram fornecidos, em tabelas fragmentadas e com as *features* em uma só coluna, no entanto, rapidamente percebemos as limitações do *software*. Com isso, optamos por desenvolver a preparação dos dados usando `Python` juntamente com a biblioteca `Pandas`, Essa etapa foi realizada de maneira iterativa, de modo a sempre aprimorar o formato dos dados usados conforme avançávamos no desenvolvimento dos modelos. 
 
-Inicialmente geramos uma grande tabela para cada cenário, apresentado as colunas de *features* com valores booleanos. Explorando um pouco mais os dados no Orange, decidimos acrescentar uma variável com a idade dos pacientes e uma coluna booleana informando se o paciente diagnosticado com COVID-19 veio a óbito em até um mês. Conforme nos aprofundamos nos modelos de aprendizado não supervisionado, decidimos utilizar uma análise de sobrevivência para a validação dos resultados obtidos. Então, foi necessário acrescentar aos dados a data em que o diagnóstico de COVID-19 foi realizado, uma data limite - levando em conta a data de morte pela doença ou a data da última consulta do paciente - e uma coluna com a diferença entre as datas citadas em dias (limitando a um valor máximo de 30 dias). Com isso, formatamos os dados de modo que o *workflow* no Orange fosse simplificado e apresentasse resultados consistentes.
+Inicialmente geramos uma grande tabela para cada cenário, apresentado as colunas de *features* com valores booleanos. Explorando um pouco mais os dados no Orange, decidimos acrescentar uma variável com a idade dos pacientes e uma coluna booleana informando se o paciente diagnosticado com COVID-19 veio a óbito em até um mês. Conforme nos aprofundamos nos modelos de aprendizado não supervisionado, decidimos utilizar uma análise de sobrevivência para a validação dos resultados obtidos. Então, foi necessário acrescentar aos dados a data em que o diagnóstico de COVID-19 foi realizado, uma data limite - levando em conta a data de morte pela doença ou a data da última consulta do paciente - e uma coluna com a diferença entre as datas citadas em dias (limitando a um valor máximo de 30 dias). Com isso, formatamos os dados de modo que o *workflow* no `Orange` fosse simplificado e apresentasse resultados consistentes.
 
 Uma alteração realizada no decorrer do projeto foi o abandono do uso da tabela de `medications`. De início, adotamos os dados de medicamentos como uma *feature*, no entanto, como nenhum integrante do grupo possui conhecimentos médicos, a análise desses dados se mostrou altamente complexa. Outro fator decisivo para abandonarmos esses dados é o fato de ainda não existir nenhum medicamento com eficácia comprovada para o combate ao novo coronavírus. 
 
@@ -153,6 +159,7 @@ Outra alteração importante ao longo do projeto foi a decisão pelo uso limitad
 
 
 # Referências Bibliográficas
+
 [[1]](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19) World Health Organization (WHO) - COVID-19 Q&A.
 
 [[2]](https://docs.python.org/3/) Python Documentation.
