@@ -1,0 +1,43 @@
+﻿feature,0,1,[C1] 0(%),[C1] 1(%),[C2] 0(%),[C2] 1(%),[C3] 0(%),[C3] 1(%),[C4] 0(%),[C4] 1(%)
+Acute bronchitis (disorder),570,380,17.19,15.0,0.35,0.0,0.18,0.0,82.28,85.0
+Acute myeloid leukemia  disease (disorder),818,132,17.24,10.61,0.24,0.0,0.12,0.0,82.4,89.39
+Acute pulmonary embolism (disorder),898,52,16.04,21.15,0.22,0.0,0.11,0.0,83.63,78.85
+Acute respiratory distress syndrome (disorder),928,22,16.49,9.09,0.11,4.55,0.11,0.0,83.3,86.36
+Acute respiratory failure (disorder),855,95,16.61,13.68,0.0,2.11,0.12,0.0,83.27,84.21
+Body mass index 30+ - obesity (finding),633,317,17.69,13.56,0.32,0.0,0.0,0.32,81.99,86.12
+Body mass index 40+ - severely obese (finding),941,9,16.15,33.33,0.21,0.0,0.11,0.0,83.53,66.67
+Carcinoma in situ of prostate (disorder),937,13,16.54,0.0,0.21,0.0,0.11,0.0,83.14,100.0
+Cardiac Arrest,926,24,16.52,8.33,0.22,0.0,0.11,0.0,83.15,91.67
+Childhood asthma,923,27,16.14,22.22,0.22,0.0,0.11,0.0,83.53,77.78
+Chronic obstructive bronchitis (disorder),942,8,16.35,12.5,0.21,0.0,0.11,0.0,83.33,87.5
+Coronary Heart Disease,910,40,16.81,5.0,0.0,5.0,0.0,2.5,83.19,87.5
+Diabetes,888,62,16.89,8.06,0.23,0.0,0.11,0.0,82.77,91.94
+Diabetic renal disease (disorder),924,26,16.77,0.0,0.22,0.0,0.11,0.0,82.9,100.0
+Diabetic retinopathy associated with type II diabetes mellitus (disorder),937,13,16.33,15.38,0.21,0.0,0.11,0.0,83.35,84.62
+Febrile neutropenia (disorder),845,105,16.92,11.43,0.24,0.0,0.12,0.0,82.72,88.57
+Heart failure (disorder),937,13,16.44,7.69,0.21,0.0,0.11,0.0,83.24,92.31
+History of cardiac arrest (situation),926,24,16.52,8.33,0.22,0.0,0.11,0.0,83.15,91.67
+History of myocardial infarction (situation),948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Hyperglycemia (disorder),921,29,16.72,3.45,0.22,0.0,0.11,0.0,82.95,96.55
+Hypertension,715,235,14.13,22.98,0.14,0.43,0.0,0.43,85.73,76.17
+Injury of heart (disorder),937,13,16.44,7.69,0.21,0.0,0.11,0.0,83.24,92.31
+Malignant neoplasm of breast (disorder),930,20,16.56,5.0,0.22,0.0,0.0,5.0,83.23,90.0
+Malignant tumor of colon,944,6,16.42,0.0,0.21,0.0,0.11,0.0,83.26,100.0
+Myocardial Infarction,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Neoplasm of prostate,937,13,16.54,0.0,0.21,0.0,0.11,0.0,83.14,100.0
+Neutropenia (disorder),923,27,16.58,7.41,0.22,0.0,0.11,0.0,83.1,92.59
+Overlapping malignant neoplasm of colon,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Prediabetes,693,257,16.59,15.56,0.0,0.78,0.14,0.0,83.26,83.66
+Pulmonary emphysema (disorder),943,7,16.22,28.57,0.21,0.0,0.11,0.0,83.46,71.43
+Respiratory distress (finding),752,198,16.62,15.15,0.0,1.01,0.13,0.0,83.24,83.84
+Suspected COVID-19,0,950,0.0,16.32,0.0,0.21,0.0,0.11,0.0,83.37
+SARS-COV-2 (COVID-19) vaccine  mRNA  spike protein  LNP  preservative free  100 mcg/0.5mL dose,689,261,15.53,18.39,0.29,0.0,0.15,0.0,84.03,81.61
+SARS-COV-2 (COVID-19) vaccine  mRNA  spike protein  LNP  preservative free  30 mcg/0.3mL dose,633,317,15.8,17.35,0.32,0.0,0.0,0.32,83.89,82.33
+SARS-COV-2 (COVID-19) vaccine  vector non-replicating  recombinant spike protein-Ad26  preservative free  0.5 mL,915,35,16.07,22.86,0.22,0.0,0.11,0.0,83.61,77.14
+Chemotherapy (procedure),815,135,17.18,11.11,0.25,0.0,0.12,0.0,82.45,88.89
+Face mask (physical object),0,950,0.0,16.32,0.0,0.21,0.0,0.11,0.0,83.37
+Heart failure education (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Lung volume reduction surgery (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Oxygen administration by mask (procedure),751,199,16.64,15.08,0.0,1.01,0.13,0.0,83.22,83.92
+Pulmonary rehabilitation (regime/therapy),943,7,16.33,14.29,0.21,0.0,0.11,0.0,83.35,85.71
+DIED IN ONE MONTH,919,31,16.54,9.68,0.0,6.45,0.11,0.0,83.35,83.87

@@ -1,0 +1,430 @@
+﻿feature,0,1,[C1] 0(%),[C1] 1(%),[C2] 0(%),[C2] 1(%),[C3] 0(%),[C3] 1(%),[C4] 0(%),[C4] 1(%)
+Acquired coagulation disorder (disorder),936,14,16.45,7.14,0.11,7.14,0.11,0.0,83.33,85.71
+Acute allergic reaction,937,13,16.22,23.08,0.21,0.0,0.11,0.0,83.46,76.92
+Acute bacterial sinusitis (disorder),888,62,15.88,22.58,0.11,1.61,0.11,0.0,83.9,75.81
+Acute bronchitis (disorder),570,380,17.19,15.0,0.35,0.0,0.18,0.0,82.28,85.0
+Acute deep venous thrombosis (disorder),880,70,16.59,12.86,0.23,0.0,0.11,0.0,83.07,87.14
+Acute myeloid leukemia  disease (disorder),818,132,17.24,10.61,0.24,0.0,0.12,0.0,82.4,89.39
+Acute pulmonary embolism (disorder),898,52,16.04,21.15,0.22,0.0,0.11,0.0,83.63,78.85
+Acute respiratory distress syndrome (disorder),928,22,16.49,9.09,0.11,4.55,0.11,0.0,83.3,86.36
+Acute respiratory failure (disorder),855,95,16.61,13.68,0.0,2.11,0.12,0.0,83.27,84.21
+Acute viral pharyngitis (disorder),555,395,17.3,14.94,0.36,0.0,0.18,0.0,82.16,85.06
+Alcoholism,945,5,16.4,0.0,0.21,0.0,0.11,0.0,83.28,100.0
+Allergy to latex (finding),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Alzheimer's disease (disorder),943,7,16.44,0.0,0.21,0.0,0.11,0.0,83.24,100.0
+Anemia (disorder),695,255,14.24,21.96,0.14,0.39,0.14,0.0,85.47,77.65
+Antepartum eclampsia,926,24,14.25,95.83,0.22,0.0,0.11,0.0,85.42,4.17
+Appendicitis,907,43,16.54,11.63,0.22,0.0,0.0,2.33,83.24,86.05
+Atopic dermatitis,927,23,15.86,34.78,0.22,0.0,0.11,0.0,83.82,65.22
+Atrial Fibrillation,928,22,16.7,0.0,0.22,0.0,0.11,0.0,82.97,100.0
+Bacteremia (finding),917,33,16.47,12.12,0.22,0.0,0.11,0.0,83.21,87.88
+Bacterial infectious disease (disorder),942,8,16.24,25.0,0.21,0.0,0.11,0.0,83.44,75.0
+Bleeding from anus,946,4,16.38,0.0,0.21,0.0,0.11,0.0,83.3,100.0
+Blighted ovum,943,7,16.01,57.14,0.21,0.0,0.11,0.0,83.67,42.86
+Body mass index 30+ - obesity (finding),633,317,17.69,13.56,0.32,0.0,0.0,0.32,81.99,86.12
+Body mass index 40+ - severely obese (finding),941,9,16.15,33.33,0.21,0.0,0.11,0.0,83.53,66.67
+Brain damage - traumatic,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Bullet wound,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Carcinoma in situ of prostate (disorder),937,13,16.54,0.0,0.21,0.0,0.11,0.0,83.14,100.0
+Cardiac Arrest,926,24,16.52,8.33,0.22,0.0,0.11,0.0,83.15,91.67
+Cerebral palsy (disorder),947,3,16.26,33.33,0.21,0.0,0.11,0.0,83.42,66.67
+Chiari malformation type II (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Child attention deficit disorder,936,14,16.56,0.0,0.21,0.0,0.11,0.0,83.12,100.0
+Childhood asthma,923,27,16.14,22.22,0.22,0.0,0.11,0.0,83.53,77.78
+Chill (finding),837,113,16.13,17.7,0.24,0.0,0.12,0.0,83.51,82.3
+Chronic congestive heart failure (disorder),947,3,16.26,33.33,0.21,0.0,0.11,0.0,83.42,66.67
+Chronic intractable migraine without aura,901,49,16.32,16.33,0.22,0.0,0.11,0.0,83.35,83.67
+Chronic kidney disease stage 1 (disorder),925,25,16.76,0.0,0.22,0.0,0.11,0.0,82.92,100.0
+Chronic kidney disease stage 2 (disorder),947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+Chronic low back pain (finding),776,174,15.72,18.97,0.26,0.0,0.13,0.0,83.89,81.03
+Chronic neck pain (finding),841,109,15.81,20.18,0.24,0.0,0.12,0.0,83.83,79.82
+Chronic obstructive bronchitis (disorder),942,8,16.35,12.5,0.21,0.0,0.11,0.0,83.33,87.5
+Chronic pain,908,42,16.08,21.43,0.22,0.0,0.11,0.0,83.59,78.57
+Chronic sinusitis (disorder),756,194,16.67,14.95,0.0,1.03,0.13,0.0,83.2,84.02
+Closed fracture of hip,944,6,16.21,33.33,0.21,0.0,0.11,0.0,83.47,66.67
+Concussion injury of brain,941,9,16.26,22.22,0.21,0.0,0.11,0.0,83.42,77.78
+Concussion with loss of consciousness,937,13,16.22,23.08,0.21,0.0,0.11,0.0,83.46,76.92
+Concussion with no loss of consciousness,901,49,16.32,16.33,0.22,0.0,0.11,0.0,83.35,83.67
+Congenital deformity of foot (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Contact dermatitis,944,6,16.1,50.0,0.21,0.0,0.11,0.0,83.58,50.0
+Coronary Heart Disease,910,40,16.81,5.0,0.0,5.0,0.0,2.5,83.19,87.5
+Cough (finding),291,659,13.4,17.6,0.69,0.0,0.0,0.15,85.91,82.25
+Cystitis,938,12,15.99,41.67,0.21,0.0,0.11,0.0,83.69,58.33
+Diabetes,888,62,16.89,8.06,0.23,0.0,0.11,0.0,82.77,91.94
+Diabetic renal disease (disorder),924,26,16.77,0.0,0.22,0.0,0.11,0.0,82.9,100.0
+Diabetic retinopathy associated with type II diabetes mellitus (disorder),937,13,16.33,15.38,0.21,0.0,0.11,0.0,83.35,84.62
+Diarrhea symptom (finding),916,34,16.48,11.76,0.22,0.0,0.11,0.0,83.19,88.24
+Dribbling from mouth (finding),949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Drug overdose,905,45,16.24,17.78,0.11,2.22,0.11,0.0,83.54,80.0
+Dyspnea (finding),760,190,16.18,16.84,0.13,0.53,0.13,0.0,83.55,82.63
+Epilepsy,934,16,16.6,0.0,0.21,0.0,0.11,0.0,83.08,100.0
+Epilepsy (disorder),948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Escherichia coli urinary tract infection,925,25,16.0,28.0,0.22,0.0,0.11,0.0,83.68,72.0
+Excessive salivation (disorder),949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Facial laceration,925,25,16.22,20.0,0.22,0.0,0.11,0.0,83.46,80.0
+Familial Alzheimer's disease of early onset (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Fatigue (finding),557,393,16.7,15.78,0.18,0.25,0.0,0.25,83.12,83.72
+Febrile neutropenia (disorder),845,105,16.92,11.43,0.24,0.0,0.12,0.0,82.72,88.57
+Fetus with unknown complication,928,22,14.98,72.73,0.22,0.0,0.11,0.0,84.7,27.27
+Fever (finding),82,868,19.51,16.01,0.0,0.23,0.0,0.12,80.49,83.64
+Fibromyalgia (disorder),928,22,15.95,31.82,0.22,0.0,0.11,0.0,83.73,68.18
+First degree burn,930,20,16.02,30.0,0.22,0.0,0.0,5.0,83.76,65.0
+Fracture of ankle,932,18,16.52,5.56,0.11,5.56,0.11,0.0,83.26,88.89
+Fracture of clavicle,921,29,16.5,10.34,0.22,0.0,0.11,0.0,83.17,89.66
+Fracture of forearm,919,31,16.54,9.68,0.11,3.23,0.11,0.0,83.24,87.1
+Fracture of rib,937,13,16.22,23.08,0.21,0.0,0.11,0.0,83.46,76.92
+Fracture subluxation of wrist,922,28,16.59,7.14,0.11,3.57,0.11,0.0,83.19,89.29
+Full-time employment (finding),289,661,7.96,19.97,0.0,0.3,0.0,0.15,92.04,79.58
+Gastroesophageal reflux disease (disorder),947,3,16.26,33.33,0.21,0.0,0.11,0.0,83.42,66.67
+Gout,944,6,16.42,0.0,0.21,0.0,0.11,0.0,83.26,100.0
+Has a criminal record (finding),799,151,17.27,11.26,0.13,0.66,0.13,0.0,82.48,88.08
+Headache (finding),804,146,15.67,19.86,0.25,0.0,0.12,0.0,83.96,80.14
+Heart failure (disorder),937,13,16.44,7.69,0.21,0.0,0.11,0.0,83.24,92.31
+Hemoptysis (finding),942,8,16.24,25.0,0.21,0.0,0.11,0.0,83.44,75.0
+History of amputation of foot (situation),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+History of appendectomy,907,43,16.54,11.63,0.22,0.0,0.0,2.33,83.24,86.05
+History of cardiac arrest (situation),926,24,16.52,8.33,0.22,0.0,0.11,0.0,83.15,91.67
+History of lower limb amputation (situation),947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+History of myocardial infarction (situation),948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+History of single seizure (situation),927,23,16.5,8.7,0.22,0.0,0.11,0.0,83.17,91.3
+Homeless (finding),946,4,16.38,0.0,0.21,0.0,0.11,0.0,83.3,100.0
+Housing unsatisfactory (finding),851,99,15.16,26.26,0.24,0.0,0.12,0.0,84.49,73.74
+Hydrocephalus (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Hyperglycemia (disorder),921,29,16.72,3.45,0.22,0.0,0.11,0.0,82.95,96.55
+Hyperlipidemia,879,71,17.63,0.0,0.11,1.41,0.11,0.0,82.14,98.59
+Hypertension,715,235,14.13,22.98,0.14,0.43,0.0,0.43,85.73,76.17
+Hypertriglyceridemia (disorder),890,60,16.97,6.67,0.22,0.0,0.11,0.0,82.7,93.33
+Hypoxemia (disorder),752,198,16.62,15.15,0.0,1.01,0.13,0.0,83.24,83.84
+Idiopathic atrophic hypothyroidism,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Impacted molars,908,42,16.08,21.43,0.22,0.0,0.11,0.0,83.59,78.57
+Injury of anterior cruciate ligament,946,4,16.38,0.0,0.21,0.0,0.11,0.0,83.3,100.0
+Injury of heart (disorder),937,13,16.44,7.69,0.21,0.0,0.11,0.0,83.24,92.31
+Injury of kidney (disorder),943,7,16.33,14.29,0.11,14.29,0.11,0.0,83.46,71.43
+Injury of medial collateral ligament of knee,942,8,16.45,0.0,0.21,0.0,0.11,0.0,83.23,100.0
+Injury of tendon of the rotator cuff of shoulder,943,7,16.44,0.0,0.21,0.0,0.11,0.0,83.24,100.0
+Intellectual disability (disorder),947,3,16.26,33.33,0.21,0.0,0.11,0.0,83.42,66.67
+Joint pain (finding),793,157,16.14,17.2,0.25,0.0,0.13,0.0,83.48,82.8
+Kyphosis deformity of spine (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Laceration of foot,925,25,16.43,12.0,0.11,4.0,0.11,0.0,83.35,84.0
+Laceration of forearm,923,27,16.36,14.81,0.22,0.0,0.11,0.0,83.32,85.19
+Laceration of hand,929,21,16.25,19.05,0.22,0.0,0.11,0.0,83.42,80.95
+Laceration of thigh,928,22,16.38,13.64,0.22,0.0,0.11,0.0,83.3,86.36
+Lack of access to transportation (finding),900,50,15.78,26.0,0.11,2.0,0.11,0.0,84.0,72.0
+Limited social contact (finding),417,533,12.95,18.95,0.0,0.38,0.0,0.19,87.05,80.49
+Localized  primary osteoarthritis of the hand,941,9,16.47,0.0,0.21,0.0,0.11,0.0,83.21,100.0
+Loss of taste (finding),462,488,13.85,18.65,0.0,0.41,0.0,0.2,86.15,80.74
+Macular edema and retinopathy due to type 2 diabetes mellitus (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Major depression  single episode,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Major depression disorder,946,4,16.38,0.0,0.21,0.0,0.11,0.0,83.3,100.0
+Malignant neoplasm of breast (disorder),930,20,16.56,5.0,0.22,0.0,0.0,5.0,83.23,90.0
+Malignant tumor of colon,944,6,16.42,0.0,0.21,0.0,0.11,0.0,83.26,100.0
+Meningomyelocele (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Metabolic syndrome X (disorder),833,117,17.17,10.26,0.24,0.0,0.12,0.0,82.47,89.74
+Metastasis from malignant tumor of prostate (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Microalbuminuria due to type 2 diabetes mellitus (disorder),947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+Miscarriage in first trimester,819,131,14.53,27.48,0.12,0.76,0.0,0.76,85.35,70.99
+Misuses drugs (finding),875,75,15.31,28.0,0.23,0.0,0.11,0.0,84.34,72.0
+Muscle pain (finding),793,157,16.14,17.2,0.25,0.0,0.13,0.0,83.48,82.8
+Myocardial Infarction,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Nasal congestion (finding),910,40,16.26,17.5,0.22,0.0,0.11,0.0,83.41,82.5
+Nausea (finding),899,51,16.02,21.57,0.22,0.0,0.0,1.96,83.76,76.47
+Neoplasm of prostate,937,13,16.54,0.0,0.21,0.0,0.11,0.0,83.14,100.0
+Neuropathy due to type 2 diabetes mellitus (disorder),927,23,16.61,4.35,0.22,0.0,0.11,0.0,83.06,95.65
+Neutropenia (disorder),923,27,16.58,7.41,0.22,0.0,0.11,0.0,83.1,92.59
+Nonproliferative diabetic retinopathy due to type 2 diabetes mellitus (disorder),943,7,16.22,28.57,0.21,0.0,0.11,0.0,83.46,71.43
+Normal pregnancy,778,172,0.0,90.12,0.26,0.0,0.13,0.0,99.61,9.88
+Not in labor force (finding),577,373,14.56,19.03,0.17,0.27,0.17,0.0,85.1,80.7
+Obstructive sleep apnea syndrome (disorder),927,23,16.5,8.7,0.11,4.35,0.11,0.0,83.28,86.96
+Only received primary school education (finding),835,115,15.33,23.48,0.12,0.87,0.12,0.0,84.43,75.65
+Opioid abuse (disorder),942,8,16.14,37.5,0.21,0.0,0.11,0.0,83.55,62.5
+Osteoarthritis of hip,940,10,16.38,10.0,0.21,0.0,0.11,0.0,83.3,90.0
+Osteoarthritis of knee,907,43,16.65,9.3,0.11,2.33,0.11,0.0,83.13,88.37
+Osteoporosis (disorder),925,25,16.65,4.0,0.11,4.0,0.11,0.0,83.14,92.0
+Otitis media,812,138,18.72,2.17,0.25,0.0,0.12,0.0,80.91,97.83
+Overlapping malignant neoplasm of colon,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Part-time employment (finding),420,530,14.05,18.11,0.0,0.38,0.24,0.0,85.71,81.51
+Passive conjunctival congestion (finding),939,11,16.51,0.0,0.21,0.0,0.11,0.0,83.17,100.0
+Pathological fracture due to osteoporosis (disorder),940,10,16.49,0.0,0.11,10.0,0.11,0.0,83.3,90.0
+Perennial allergic rhinitis,928,22,15.95,31.82,0.22,0.0,0.11,0.0,83.73,68.18
+Perennial allergic rhinitis with seasonal variation,936,14,16.35,14.29,0.21,0.0,0.11,0.0,83.33,85.71
+Pneumonia (disorder),751,199,16.51,15.58,0.0,1.01,0.13,0.0,83.36,83.42
+Polyp of colon,884,66,17.53,0.0,0.23,0.0,0.11,0.0,82.13,100.0
+Poor muscle tone (finding),947,3,16.26,33.33,0.21,0.0,0.11,0.0,83.42,66.67
+Posttraumatic stress disorder,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Prediabetes,693,257,16.59,15.56,0.0,0.78,0.14,0.0,83.26,83.66
+Preeclampsia,927,23,14.24,100.0,0.22,0.0,0.11,0.0,85.44,0.0
+Pressure ulcer (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Primary fibromyalgia syndrome,946,4,16.38,0.0,0.21,0.0,0.11,0.0,83.3,100.0
+Primary malignant neoplasm of colon,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Proliferative diabetic retinopathy due to type II diabetes mellitus (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Protracted diarrhea,946,4,16.38,0.0,0.21,0.0,0.11,0.0,83.3,100.0
+Pulmonary emphysema (disorder),943,7,16.22,28.57,0.21,0.0,0.11,0.0,83.46,71.43
+Pyelonephritis,949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Received certificate of high school equivalency (finding),742,208,15.09,20.67,0.13,0.48,0.0,0.48,84.77,78.37
+Received higher education (finding),551,399,13.43,20.3,0.36,0.0,0.18,0.0,86.03,79.7
+Recurrent rectal polyp,930,20,16.67,0.0,0.22,0.0,0.11,0.0,83.01,100.0
+Recurrent urinary tract infection,944,6,16.31,16.67,0.21,0.0,0.11,0.0,83.37,83.33
+Refugee (person),895,55,15.53,29.09,0.11,1.82,0.0,1.82,84.36,67.27
+Reports of violence in the environment (finding),656,294,15.09,19.05,0.15,0.34,0.15,0.0,84.6,80.61
+Respiratory distress (finding),752,198,16.62,15.15,0.0,1.01,0.13,0.0,83.24,83.84
+Rheumatoid arthritis,945,5,16.4,0.0,0.21,0.0,0.11,0.0,83.28,100.0
+Risk activity involvement (finding),727,223,15.54,18.83,0.0,0.9,0.14,0.0,84.32,80.27
+Rupture of appendix,936,14,16.56,0.0,0.21,0.0,0.11,0.0,83.12,100.0
+Rupture of patellar tendon,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Seasonal allergic rhinitis,943,7,16.33,14.29,0.21,0.0,0.11,0.0,83.35,85.71
+Second degree burn,933,17,16.61,0.0,0.21,0.0,0.11,0.0,83.07,100.0
+Seizure disorder,927,23,16.5,8.7,0.22,0.0,0.11,0.0,83.17,91.3
+Sepsis (disorder),932,18,16.31,16.67,0.21,0.0,0.11,0.0,83.37,83.33
+Sepsis caused by virus (disorder),877,73,16.42,15.07,0.0,2.74,0.11,0.0,83.47,82.19
+Septic shock (disorder),933,17,16.51,5.88,0.11,5.88,0.11,0.0,83.28,88.24
+Served in armed forces (finding),918,32,16.78,3.12,0.22,0.0,0.11,0.0,82.9,96.88
+Severe anxiety (panic) (finding,850,100,15.76,21.0,0.24,0.0,0.0,1.0,84.0,78.0
+Sinusitis (disorder),893,57,16.24,17.54,0.22,0.0,0.11,0.0,83.43,82.46
+Sleep apnea (disorder),934,16,16.38,12.5,0.21,0.0,0.11,0.0,83.3,87.5
+Sleep disorder (disorder),911,39,16.58,10.26,0.11,2.56,0.11,0.0,83.21,87.18
+Smokes tobacco daily,946,4,16.38,0.0,0.21,0.0,0.11,0.0,83.3,100.0
+Social isolation (finding),417,533,10.55,20.83,0.24,0.19,0.0,0.19,89.21,78.8
+Sore throat symptom (finding),824,126,16.14,17.46,0.24,0.0,0.12,0.0,83.5,82.54
+Spasticity (finding),948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Spina bifida occulta (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Sprain of ankle,856,94,15.3,25.53,0.23,0.0,0.0,1.06,84.46,73.4
+Sprain of wrist,902,48,16.19,18.75,0.22,0.0,0.11,0.0,83.48,81.25
+Sputum finding (finding),630,320,16.19,16.56,0.16,0.31,0.0,0.31,83.65,82.81
+Streptococcal sore throat (disorder),820,130,16.83,13.08,0.12,0.77,0.12,0.0,82.93,86.15
+Stress (finding),244,706,2.46,21.1,0.0,0.28,0.0,0.14,97.54,78.47
+Stroke,926,24,16.74,0.0,0.22,0.0,0.11,0.0,82.94,100.0
+Suspected COVID-19,0,950,0.0,16.32,0.0,0.21,0.0,0.11,0.0,83.37
+Tear of meniscus of knee,947,3,16.26,33.33,0.21,0.0,0.11,0.0,83.42,66.67
+Third degree burn,948,2,16.24,50.0,0.21,0.0,0.11,0.0,83.44,50.0
+Transformed migraine (disorder),944,6,16.21,33.33,0.21,0.0,0.11,0.0,83.47,66.67
+Transport problems (finding),901,49,15.76,26.53,0.11,2.04,0.11,0.0,84.02,71.43
+Tubal pregnancy,934,16,16.27,18.75,0.11,6.25,0.11,0.0,83.51,75.0
+Unemployed (finding),893,57,15.34,31.58,0.22,0.0,0.11,0.0,84.32,68.42
+Unhealthy alcohol drinking behavior (finding),819,131,16.24,16.79,0.24,0.0,0.0,0.76,83.52,82.44
+Urinary tract infectious disease (disorder),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Victim of intimate partner abuse (finding),564,386,16.67,15.8,0.18,0.26,0.0,0.26,83.16,83.68
+Viral sinusitis (disorder),337,613,12.46,18.43,0.0,0.33,0.3,0.0,87.24,81.24
+Vomiting symptom (finding),899,51,16.02,21.57,0.22,0.0,0.0,1.96,83.76,76.47
+Wheezing (finding),760,190,16.18,16.84,0.13,0.53,0.13,0.0,83.55,82.63
+Whiplash injury to neck,899,51,16.13,19.61,0.11,1.96,0.11,0.0,83.65,78.43
+DTaP,763,187,20.31,0.0,0.26,0.0,0.13,0.0,79.29,100.0
+HPV  quadrivalent,797,153,16.94,13.07,0.25,0.0,0.13,0.0,82.69,86.93
+Hep A  adult,816,134,15.07,23.88,0.25,0.0,0.12,0.0,84.56,76.12
+Hep A  ped/adol  2 dose,800,150,19.38,0.0,0.25,0.0,0.12,0.0,80.25,100.0
+Hep B  adolescent or pediatric,824,126,18.81,0.0,0.24,0.0,0.12,0.0,80.83,100.0
+Hep B  adult,806,144,12.41,38.19,0.25,0.0,0.12,0.0,87.22,61.81
+Hib (PRP-OMP),815,135,19.02,0.0,0.25,0.0,0.12,0.0,80.61,100.0
+IPV,763,187,20.31,0.0,0.26,0.0,0.13,0.0,79.29,100.0
+Influenza  seasonal  injectable  preservative free,2,948,0.0,16.35,0.0,0.21,0.0,0.11,100.0,83.33
+MMR,764,186,20.29,0.0,0.26,0.0,0.13,0.0,79.32,100.0
+Pneumococcal conjugate PCV 13,748,202,20.72,0.0,0.27,0.0,0.0,0.5,79.01,99.5
+SARS-COV-2 (COVID-19) vaccine  mRNA  spike protein  LNP  preservative free  100 mcg/0.5mL dose,689,261,15.53,18.39,0.29,0.0,0.15,0.0,84.03,81.61
+SARS-COV-2 (COVID-19) vaccine  mRNA  spike protein  LNP  preservative free  30 mcg/0.3mL dose,633,317,15.8,17.35,0.32,0.0,0.0,0.32,83.89,82.33
+SARS-COV-2 (COVID-19) vaccine  vector non-replicating  recombinant spike protein-Ad26  preservative free  0.5 mL,915,35,16.07,22.86,0.22,0.0,0.11,0.0,83.61,77.14
+Td (adult) preservative free,292,658,7.88,20.06,0.68,0.0,0.0,0.15,91.44,79.79
+Tdap,827,123,17.41,8.94,0.24,0.0,0.12,0.0,82.22,91.06
+meningococcal MCV4P,686,264,12.83,25.38,0.29,0.0,0.15,0.0,86.73,74.62
+pneumococcal polysaccharide vaccine  23 valent,892,58,17.38,0.0,0.22,0.0,0.0,1.72,82.4,98.28
+rotavirus  monovalent,827,123,18.74,0.0,0.24,0.0,0.12,0.0,80.89,100.0
+varicella,764,186,20.29,0.0,0.26,0.0,0.13,0.0,79.32,100.0
+zoster,814,136,18.55,2.94,0.25,0.0,0.12,0.0,81.08,97.06
+Admission to burn unit,948,2,16.24,50.0,0.21,0.0,0.11,0.0,83.44,50.0
+Admission to long stay hospital,948,2,16.24,50.0,0.21,0.0,0.11,0.0,83.44,50.0
+Admission to orthopedic department,915,35,16.39,14.29,0.22,0.0,0.11,0.0,83.28,85.71
+Admission to trauma surgery department,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Admit to ICU (procedure),949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Admit to intensive care unit (ICU),945,5,16.4,0.0,0.21,0.0,0.11,0.0,83.28,100.0
+Allergy screening test,896,54,16.18,18.52,0.22,0.0,0.11,0.0,83.48,81.48
+Alpha-fetoprotein test,797,153,0.25,100.0,0.25,0.0,0.13,0.0,99.37,0.0
+Amputation of right leg,948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Ankle X-ray,932,18,16.52,5.56,0.11,5.56,0.11,0.0,83.26,88.89
+Antenatal RhD antibody screening,920,30,13.59,100.0,0.22,0.0,0.11,0.0,86.09,0.0
+Anticipatory guidance (procedure),785,165,15.41,20.61,0.25,0.0,0.13,0.0,84.2,79.39
+Appendectomy,942,8,16.45,0.0,0.21,0.0,0.11,0.0,83.23,100.0
+Artificial respiration (procedure),949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Assessment of anxiety (procedure),175,775,1.71,19.61,0.0,0.26,0.0,0.13,98.29,80.0
+Assessment of health and social care needs (procedure),228,722,1.75,20.91,0.0,0.28,0.0,0.14,98.25,78.67
+Assessment of substance use (procedure),201,749,4.48,19.49,0.5,0.13,0.0,0.13,95.02,80.24
+Assessment using Alcohol Use Disorders Identification Test - Consumption (procedure),355,595,12.39,18.66,0.28,0.17,0.0,0.17,87.32,81.01
+Assessment using Car  Relax  Alone  Forget  Friends  Trouble Screening Test (procedure),776,174,15.46,20.11,0.26,0.0,0.13,0.0,84.15,79.89
+Assessment using Morse Fall Scale (procedure),820,130,18.17,4.62,0.0,1.54,0.0,0.77,81.83,93.08
+Assessment using New York Heart Association Classification (procedure),947,3,16.26,33.33,0.21,0.0,0.11,0.0,83.42,66.67
+Asthma screening,938,12,16.52,0.0,0.21,0.0,0.11,0.0,83.16,100.0
+Augmentation of labor,918,32,13.4,100.0,0.22,0.0,0.11,0.0,86.27,0.0
+Auscultation of the fetal heart,792,158,0.0,98.1,0.25,0.0,0.13,0.0,99.62,1.9
+Bilateral tubal ligation,930,20,14.84,85.0,0.22,0.0,0.11,0.0,84.84,15.0
+Biopsy of breast (procedure),940,10,16.38,10.0,0.21,0.0,0.0,10.0,83.4,80.0
+Biopsy of colon,946,4,16.38,0.0,0.21,0.0,0.11,0.0,83.3,100.0
+Biopsy of prostate,941,9,16.47,0.0,0.21,0.0,0.11,0.0,83.21,100.0
+Blood typing  RH typing,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Bone density scan (procedure),905,45,17.13,0.0,0.11,2.22,0.11,0.0,82.65,97.78
+Bone immobilization,864,86,16.9,10.47,0.0,2.33,0.12,0.0,82.99,87.21
+Brief general examination (procedure),850,100,13.06,44.0,0.24,0.0,0.12,0.0,86.59,56.0
+Cardiovascular stress testing (procedure),949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Care regimes assessment (procedure),916,34,16.38,14.71,0.11,2.94,0.11,0.0,83.41,82.35
+Catheter ablation of tissue of heart,929,21,16.68,0.0,0.22,0.0,0.11,0.0,82.99,100.0
+Certification procedure (procedure),915,35,16.94,0.0,0.22,0.0,0.11,0.0,82.73,100.0
+Cesarean section,915,35,13.11,100.0,0.22,0.0,0.11,0.0,86.56,0.0
+Chemotherapy (procedure),815,135,17.18,11.11,0.25,0.0,0.12,0.0,82.45,88.89
+Chest X-ray,938,12,16.2,25.0,0.21,0.0,0.11,0.0,83.48,75.0
+Childbirth,815,135,2.82,97.78,0.25,0.0,0.12,0.0,96.81,2.22
+Chlamydia antigen test,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Clavicle X-ray,921,29,16.5,10.34,0.22,0.0,0.11,0.0,83.17,89.66
+Cognitive and behavioral therapy,944,6,16.42,0.0,0.21,0.0,0.11,0.0,83.26,100.0
+Cognitive and behavioral therapy (regime/therapy),935,15,16.58,0.0,0.21,0.0,0.11,0.0,83.1,100.0
+Colonoscopy,754,196,20.42,0.51,0.27,0.0,0.13,0.0,79.18,99.49
+Combined chemotherapy and radiation therapy (procedure),944,6,16.42,0.0,0.21,0.0,0.11,0.0,83.26,100.0
+Comprehensive interview and evaluation (procedure),942,8,16.45,0.0,0.21,0.0,0.0,12.5,83.33,87.5
+Continuous positive airway pressure titration (procedure),944,6,16.21,33.33,0.21,0.0,0.11,0.0,83.47,66.67
+Controlled ventilation procedure and therapy  initiation and management (procedure),922,28,16.59,7.14,0.11,3.57,0.11,0.0,83.19,89.29
+Coordination of care plan (procedure),942,8,16.45,0.0,0.21,0.0,0.0,12.5,83.33,87.5
+Coronary artery bypass grafting,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Counseling for termination of pregnancy,896,54,12.05,87.04,0.22,0.0,0.11,0.0,87.61,12.96
+Cytopathology procedure  preparation of smear  genital source,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Cytopathology procedure  preparation of smear  genital source (procedure),940,10,16.38,10.0,0.21,0.0,0.0,10.0,83.4,80.0
+Depression screening,780,170,0.51,88.82,0.26,0.0,0.13,0.0,99.1,11.18
+Depression screening (procedure),155,795,1.29,19.25,0.0,0.25,0.0,0.13,98.71,80.38
+Depression screening using Patient Health Questionnaire Nine Item score (procedure),567,383,15.52,17.49,0.18,0.26,0.0,0.26,84.3,81.98
+Depression screening using Patient Health Questionnaire Two-Item score (procedure),236,714,2.97,20.73,0.0,0.28,0.0,0.14,97.03,78.85
+Development of individualized plan of care (procedure),797,153,17.44,10.46,0.0,1.31,0.0,0.65,82.56,87.58
+Digital examination of rectum,940,10,16.49,0.0,0.21,0.0,0.11,0.0,83.19,100.0
+Discharge from skilled nursing facility (procedure),829,121,16.77,13.22,0.0,1.65,0.0,0.83,83.23,84.3
+Echocardiography (procedure),924,26,16.67,3.85,0.22,0.0,0.11,0.0,83.01,96.15
+Electrical cardioversion,928,22,16.7,0.0,0.22,0.0,0.11,0.0,82.97,100.0
+Electrocardiographic procedure,947,3,16.26,33.33,0.21,0.0,0.11,0.0,83.42,66.67
+Epidural anesthesia,910,40,12.75,97.5,0.22,0.0,0.11,0.0,86.92,2.5
+Episiotomy,891,59,11.0,96.61,0.22,0.0,0.11,0.0,88.66,3.39
+Evaluation of uterine fundal height,792,158,0.0,98.1,0.25,0.0,0.13,0.0,99.62,1.9
+Excision of axillary lymph node (procedure),948,2,16.24,50.0,0.21,0.0,0.11,0.0,83.44,50.0
+Excision of breast tissue (procedure),946,4,16.38,0.0,0.21,0.0,0.0,25.0,83.4,75.0
+Excision of fallopian tube and surgical removal of ectopic pregnancy,948,2,16.14,100.0,0.21,0.0,0.11,0.0,83.54,0.0
+Excision of sentinel lymph node (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Exercise class,947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+Extraction of wisdom tooth,939,11,16.08,36.36,0.21,0.0,0.11,0.0,83.6,63.64
+Face mask (physical object),0,950,0.0,16.32,0.0,0.21,0.0,0.11,0.0,83.37
+Fetal anatomy study,797,153,0.25,100.0,0.25,0.0,0.13,0.0,99.37,0.0
+Gonorrhea infection test,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Health risks education (procedure),866,84,15.82,21.43,0.23,0.0,0.12,0.0,83.83,78.57
+Heart failure education (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Hemodialysis (procedure),943,7,16.33,14.29,0.11,14.29,0.11,0.0,83.46,71.43
+Hemoglobin / Hematocrit / Platelet count,792,158,0.0,98.1,0.25,0.0,0.13,0.0,99.62,1.9
+Heparin therapy (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Hepatitis B Surface Antigen Measurement,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Hepatitis C antibody test,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+History AND physical examination (procedure),829,121,16.77,13.22,0.0,1.65,0.0,0.83,83.23,84.3
+Home health aide service (regime/therapy),945,5,16.4,0.0,0.21,0.0,0.11,0.0,83.28,100.0
+Hospice care (regime/therapy),915,35,16.94,0.0,0.22,0.0,0.11,0.0,82.73,100.0
+Human epidermal growth factor receptor 2 gene detection by fluorescence in situ hybridization (procedure),940,10,16.38,10.0,0.21,0.0,0.0,10.0,83.4,80.0
+Human epidermal growth factor receptor 2 gene detection by immunohistochemistry (procedure),940,10,16.38,10.0,0.21,0.0,0.0,10.0,83.4,80.0
+Human immunodeficiency virus antigen test,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Induced termination of pregnancy,896,54,12.05,87.04,0.22,0.0,0.11,0.0,87.61,12.96
+Information gathering (procedure),938,12,16.42,8.33,0.21,0.0,0.11,0.0,83.26,91.67
+Initial patient assessment (procedure),797,153,17.44,10.46,0.0,1.31,0.0,0.65,82.56,87.58
+Injection of adrenaline,937,13,16.22,23.08,0.21,0.0,0.11,0.0,83.46,76.92
+Injection of tetanus antitoxin,922,28,16.38,14.29,0.22,0.0,0.11,0.0,83.3,85.71
+Insertion of biventricular implantable cardioverter defibrillator,944,6,16.42,0.0,0.21,0.0,0.11,0.0,83.26,100.0
+Insertion of endotracheal tube (procedure),922,28,16.59,7.14,0.11,3.57,0.11,0.0,83.19,89.29
+Insertion of intrauterine contraceptive device,864,86,10.76,72.09,0.23,0.0,0.12,0.0,88.89,27.91
+Insertion of subcutaneous contraceptive,864,86,11.57,63.95,0.23,0.0,0.12,0.0,88.08,36.05
+Instrumental delivery,926,24,14.15,100.0,0.22,0.0,0.11,0.0,85.53,0.0
+Intramuscular injection,863,87,11.01,68.97,0.23,0.0,0.12,0.0,88.64,31.03
+Intravenous blood transfusion of packed cells (procedure),945,5,16.08,60.0,0.21,0.0,0.11,0.0,83.6,40.0
+Kitchen practice,947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+Knee X-ray,933,17,16.51,5.88,0.21,0.0,0.11,0.0,83.17,94.12
+Lumpectomy of breast (procedure),944,6,16.31,16.67,0.21,0.0,0.11,0.0,83.37,83.33
+Lung volume reduction surgery (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Magnetic resonance imaging of breast (procedure),947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+Mammogram - symptomatic (procedure),947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+Mammography (procedure),932,18,16.52,5.56,0.21,0.0,0.0,5.56,83.26,88.89
+Manual pelvic examination (procedure),940,10,16.38,10.0,0.21,0.0,0.0,10.0,83.4,80.0
+Measurement of Varicella-zoster virus antibody,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Measurement of respiratory function (procedure),738,212,17.34,12.74,0.27,0.0,0.14,0.0,82.25,87.26
+Medical induction of labor,910,40,12.64,100.0,0.22,0.0,0.11,0.0,87.03,0.0
+Medication Reconciliation (procedure),8,942,37.5,16.14,0.0,0.21,0.0,0.11,62.5,83.55
+Mental health screening (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Methotrexate injection into tubal pregnancy,949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Microbial culture (procedure),942,8,16.24,25.0,0.21,0.0,0.11,0.0,83.44,75.0
+Monitoring of patient (regime/therapy),949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Movement therapy (regime/therapy),859,91,15.72,21.98,0.23,0.0,0.12,0.0,83.93,78.02
+Nasal sinus endoscopy (procedure),942,8,16.14,37.5,0.21,0.0,0.11,0.0,83.55,62.5
+Notifications (procedure),915,35,16.94,0.0,0.22,0.0,0.11,0.0,82.73,100.0
+Nursing care/supplementary surveillance (regime/therapy),823,127,16.89,12.6,0.0,1.57,0.0,0.79,83.11,85.04
+Occupational therapy (regime/therapy),827,123,16.81,13.01,0.0,1.63,0.0,0.81,83.19,84.55
+Oxygen administration by mask (procedure),751,199,16.64,15.08,0.0,1.01,0.13,0.0,83.22,83.92
+Partial resection of colon,942,8,16.45,0.0,0.21,0.0,0.11,0.0,83.23,100.0
+Patient discharge (procedure),910,40,17.03,0.0,0.22,0.0,0.0,2.5,82.75,97.5
+Pelvis X-ray,944,6,16.21,33.33,0.21,0.0,0.11,0.0,83.47,66.67
+Percutaneous coronary intervention,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Percutaneous mechanical thrombectomy of portal vein using fluoroscopic guidance,934,16,16.6,0.0,0.21,0.0,0.11,0.0,83.08,100.0
+Peripheral blood smear interpretation,850,100,13.06,44.0,0.24,0.0,0.12,0.0,86.59,56.0
+Physical exam following abortion,896,54,12.05,87.04,0.22,0.0,0.11,0.0,87.61,12.96
+Physical examination,902,48,12.75,83.33,0.22,0.0,0.11,0.0,86.92,16.67
+Physical examination following birth,797,153,0.88,96.73,0.25,0.0,0.13,0.0,98.75,3.27
+Physical examination of mother,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Physical therapy procedure (regime/therapy),823,127,16.89,12.6,0.0,1.57,0.0,0.79,83.11,85.04
+Placing subject in prone position (procedure),751,199,16.64,15.08,0.0,1.01,0.13,0.0,83.22,83.92
+Plain chest X-ray (procedure),734,216,16.21,16.67,0.0,0.93,0.14,0.0,83.65,82.41
+Pre-discharge assessment (procedure),829,121,16.77,13.22,0.0,1.65,0.0,0.83,83.23,84.3
+Pregnancy termination care,896,54,12.05,87.04,0.22,0.0,0.11,0.0,87.61,12.96
+Premature birth of newborn,935,15,14.97,100.0,0.21,0.0,0.11,0.0,84.71,0.0
+Professional / ancillary services care (regime/therapy),831,119,16.73,13.45,0.0,1.68,0.0,0.84,83.27,84.03
+Prostatectomy,943,7,16.44,0.0,0.21,0.0,0.11,0.0,83.24,100.0
+Psychosocial care (regime/therapy),948,2,16.14,100.0,0.21,0.0,0.11,0.0,83.54,0.0
+Pulmonary rehabilitation (regime/therapy),943,7,16.33,14.29,0.21,0.0,0.11,0.0,83.35,85.71
+Radiation therapy care (regime/therapy),948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Rectal polypectomy,896,54,17.3,0.0,0.22,0.0,0.11,0.0,82.37,100.0
+Referral to home health care service (procedure),942,8,16.45,0.0,0.21,0.0,0.0,12.5,83.33,87.5
+Referral to hypertension clinic,946,4,16.07,75.0,0.21,0.0,0.11,0.0,83.62,25.0
+Referral to sleep apnea clinic (procedure),935,15,16.15,26.67,0.21,0.0,0.11,0.0,83.53,73.33
+Removal of endotracheal tube (procedure),942,8,16.35,12.5,0.21,0.0,0.11,0.0,83.33,87.5
+Removal of intrauterine device,892,58,12.67,72.41,0.22,0.0,0.11,0.0,87.0,27.59
+Removal of subcutaneous contraceptive,887,63,12.85,65.08,0.23,0.0,0.11,0.0,86.81,34.92
+Renal dialysis (procedure),947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+Replacement of contraceptive intrauterine device,914,36,15.21,44.44,0.22,0.0,0.11,0.0,84.46,55.56
+Resuscitation using intravenous fluid (procedure),946,4,16.28,25.0,0.21,0.0,0.11,0.0,83.4,75.0
+Review of systems (procedure),850,100,13.06,44.0,0.24,0.0,0.12,0.0,86.59,56.0
+RhD passive immunization,919,31,13.6,96.77,0.22,0.0,0.11,0.0,86.07,3.23
+Rubella screening,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Screening for chromosomal aneuploidy in prenatal amniotic fluid,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Screening for domestic abuse (procedure),311,639,9.32,19.72,0.0,0.31,0.0,0.16,90.68,79.81
+Screening for drug abuse (procedure),334,616,12.57,18.34,0.3,0.16,0.0,0.16,87.13,81.33
+Screening for occult blood in feces (procedure),897,53,17.28,0.0,0.22,0.0,0.11,0.0,82.39,100.0
+Screening mammography (procedure),943,7,16.33,14.29,0.21,0.0,0.0,14.29,83.46,71.43
+Seizure Count Cerebral Cortex Electroencephalogram (EEG),947,3,16.37,0.0,0.21,0.0,0.11,0.0,83.32,100.0
+Sentinel lymph node biopsy (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Skin test for tuberculosis,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Sleep apnea assessment (procedure),935,15,16.15,26.67,0.21,0.0,0.11,0.0,83.53,73.33
+Sleep apnea monitoring with alarm (regime/therapy),941,9,16.26,22.22,0.21,0.0,0.11,0.0,83.42,77.78
+Speech and language therapy regime (regime/therapy,832,118,16.71,13.56,0.0,1.69,0.0,0.85,83.29,83.9
+Speech and language therapy regime (regime/therapy),946,4,16.38,0.0,0.21,0.0,0.0,25.0,83.4,75.0
+Spirometry (procedure),935,15,16.26,20.0,0.21,0.0,0.11,0.0,83.42,80.0
+Spontaneous breech delivery,949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Sputum examination (procedure),871,79,16.88,10.13,0.23,0.0,0.11,0.0,82.78,89.87
+Standard pregnancy test,781,169,0.0,91.72,0.26,0.0,0.13,0.0,99.62,8.28
+Streptococcus pneumoniae group B antigen test,806,144,1.74,97.92,0.25,0.0,0.12,0.0,97.89,2.08
+Subcutaneous immunotherapy,924,26,15.69,38.46,0.22,0.0,0.11,0.0,83.98,61.54
+Suicide risk assessment (procedure),949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Surgical manipulation of joint of knee,936,14,16.56,0.0,0.21,0.0,0.11,0.0,83.12,100.0
+Surgical manipulation of shoulder joint,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+Suture open wound,836,114,16.27,16.67,0.12,0.88,0.12,0.0,83.49,82.46
+Syphilis infection test,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Teleradiotherapy procedure (procedure),944,6,16.42,0.0,0.21,0.0,0.0,16.67,83.37,83.33
+Throat culture (procedure),719,231,16.97,14.29,0.14,0.43,0.14,0.0,82.75,85.28
+Transfer to stepdown,818,132,17.24,10.61,0.24,0.0,0.12,0.0,82.4,89.39
+Transfer to stepdown unit (procedure),946,4,16.28,25.0,0.21,0.0,0.11,0.0,83.4,75.0
+Transfusion of plasma (procedure),948,2,16.35,0.0,0.21,0.0,0.11,0.0,83.33,100.0
+Transplant of lung (procedure),949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+Ultrasonography of bilateral breasts (procedure),943,7,16.33,14.29,0.21,0.0,0.0,14.29,83.46,71.43
+Ultrasound scan for fetal viability,781,169,0.0,91.72,0.26,0.0,0.13,0.0,99.62,8.28
+Upper arm X-ray,919,31,16.54,9.68,0.11,3.23,0.11,0.0,83.24,87.1
+Urine culture,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Urine protein test,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Urine screening for glucose,795,155,0.38,98.06,0.25,0.0,0.13,0.0,99.25,1.94
+Urine screening test for diabetes,795,155,0.0,100.0,0.25,0.0,0.13,0.0,99.62,0.0
+Vaccination for diphtheria  pertussis  and tetanus,795,155,0.38,98.06,0.25,0.0,0.13,0.0,99.25,1.94
+Vasectomy,945,5,16.4,0.0,0.21,0.0,0.11,0.0,83.28,100.0
+Weaning from mechanically assisted ventilation (procedure),949,1,16.23,100.0,0.21,0.0,0.11,0.0,83.46,0.0
+X-ray or wrist,923,27,16.58,7.41,0.11,3.7,0.11,0.0,83.21,88.89
+negative screening for depression on phq9,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+positive screening for PHQ-9,949,1,16.33,0.0,0.21,0.0,0.11,0.0,83.35,100.0
+DIED IN ONE MONTH,919,31,16.54,9.68,0.0,6.45,0.11,0.0,83.35,83.87
