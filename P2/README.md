@@ -117,8 +117,20 @@ Isto é, ao final da preparação de dados, geramos as tabelas: links das tabela
 
 
 # Evolução do Projeto
-> Seção opcional se houver histórico de mudanças e evolução relevantes.
-> Relate aqui a evolução do projeto: possíveis problemas enfrentados e possíveis mudanças de trajetória. Relatar o processo para se alcançar os resultados é tão importante quanto os resultados.
+
+Antes mesmo de propriamente começarmos o projeto, enfrentamos uma grande dificuldade em definir a pergunta de pesquisa a ser explorada. Parte dessa indefinição decorreu da vastidão dos dados fornecidos, o que possibilitava uma infinidade de temas e abordagens a serem adotadas, no entanto, o fator que mais contribuiu para essa dificuldade foi a impressão de “limitação” em quantidade dos dados dos históricos médicos.
+
+De início, estávamos muito presos aos dados em questões quantitativas, de modo que, sempre que levantávamos uma pergunta de pesquisa, acreditávamos que os dados fornecidos, nos dois primeiros cenários, não eram suficientes para explorar a proposta. Assim, após discutirmos algumas perguntas e continuarmos sentindo a mesma sensação de insuficiência de dados, solicitamos ajuda ao Prof. André Santanchè. Após a conversa com o professor, melhor orientados, conseguimos desapegar dos aspectos quantitativos dos dados e retornar a uma pergunta de pesquisa que já havíamos discutido, abordando o tema da COVID-19.
+
+Com o assunto definido, após debatermos sobre o período de tempo que seria adotado para realizar a predição, chegamos ao intervalo de um mês e adotamos a seguinte pergunta: Dado um paciente com COVID-19, qual é a probabilidade dele morrer, em decorrência dessa doença, em até 30 dias após a data do diagnóstico?
+
+Com uma proposta de predição bem definida, esperávamos que a etapa de preparação de dados desse projeto fosse mínima. Uma vez que acreditávamos que o Orange trabalhasse bem com os dados no formato que foram fornecidos, em tabelas fragmentadas e com as *features* em uma só coluna, no entanto, rapidamente percebemos as limitações do *software*. Com isso, optamos por desenvolver a preparação dos dados usando `Python` juntamente com a biblioteca `Pandas`, Essa etapa foi realizada de maneira iterativa, de modo a sempre aprimorar o formato dos dados usados conforme avançávamos no desenvolvimento dos modelos. 
+
+Inicialmente geramos uma grande tabela para cada cenário, apresentado as colunas de *features* com valores booleanos. Explorando um pouco mais os dados no Orange, decidimos acrescentar uma variável com a idade dos pacientes e uma coluna booleana informando se o paciente diagnosticado com COVID-19 veio a óbito em até um mês. Conforme nos aprofundamos nos modelos de aprendizado não supervisionado, decidimos utilizar uma análise de sobrevivência para a validação dos resultados obtidos. Então, foi necessário acrescentar aos dados a data em que o diagnóstico de COVID-19 foi realizado, uma data limite - levando em conta a data de morte pela doença ou a data da última consulta do paciente - e uma coluna com a diferença entre as datas citadas em dias (limitando a um valor máximo de 30 dias). Com isso, formatamos os dados de modo que o *workflow* no Orange fosse simplificado e apresentasse resultados consistentes.
+
+Uma alteração realizada no decorrer do projeto foi o abandono do uso da tabela de `medications`. De início, adotamos os dados de medicamentos como uma *feature*, no entanto, como nenhum integrante do grupo possui conhecimentos médicos, a análise desses dados se mostrou altamente complexa. Outro fator decisivo para abandonarmos esses dados é o fato de ainda não existir nenhum medicamento com eficácia comprovada para o combate ao novo coronavírus. 
+
+Outra alteração importante ao longo do projeto foi a decisão pelo uso limitado da tabela `encounters`. Considerando o tempo disponível para o projeto, pensamos em utilizá-la somente para verificar o número de consultas realizadas por cada paciente, no entanto, chegamos a um consenso de que essa informação não seria de grande valia. Ao fim, fizemos uso dessa tabela somente para recuperar os pacientes que possuíam COVID-19 como causa de morte na declaração de óbito.
 
 
 # Discussão
