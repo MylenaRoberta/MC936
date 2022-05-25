@@ -177,3 +177,5 @@ Outra alteração importante ao longo do projeto foi a decisão pelo uso limitad
 [[8]](https://en.wikipedia.org/wiki/Silhouette_(clustering)) Silhouette Score Method - Wikipedia.
 
 [[9]](https://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator) Kaplan-Meier Estimator - Wikipedia.
+
+[[10]](https://www.hospitalpuc-campinas.com.br/covid-19/potenciais-efeitos-do-coronavirus-no-sistema-cardiovascular/) Potenciais Efeitos do Coronavírus no Sistema Cardiovascular.
