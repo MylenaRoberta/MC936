@@ -49,7 +49,7 @@ Ao todo foram disponibilizados quatro cenários (`scenario01`, `scenario02`, `sc
 | scenario03 | 11573  | 10 anos | Washington    | Diversas |
 | scenario04 | 117531 | 10 anos | Massachusetts | Diversas |
 
-*Tabela 1 - Informações sobre os cenários gerados pelo Synthea que foram disponibilizados.*
+***Tabela 1:** Informações sobre os cenários gerados pelo Synthea que foram disponibilizados.*
 
 Antes de definirmos quais dados dos cenários adotados seriam empregados no projeto, determinamos como seriam desenvolvidos os modelos de predição. Sendo que optamos pelo uso de técnicas de aprendizagem de máquina não supervisionada para tal, em específico, escolhemos a Clusterização Hierárquica e também a Clusterização K-means. 
 
@@ -67,7 +67,7 @@ Voltando aos cenários de históricos médicos, segue que cada um conta com os d
 | `patients.csv`      | Dados demográficos do paciente                         |
 | `procedures.csv`    | Dados de procedimento do paciente, incluindo cirurgias |
 
-*Tabela 2 - Descrições dos arquivos CSV das tabelas adotadas como base para o estudo.*
+***Tabela 2:** Descrições dos arquivos CSV das tabelas adotadas como base para o estudo.*
 
 Com as bases de estudo definidas, avançamos para a preparação de dados que pode ser encontrada no notebook [`data_processing_COVID_19_patients.ipynb`](notebooks/data_processing_COVID_19_patients.ipynb). De início, partindo das tabelas de `conditions`, selecionamos os `IDs` dos pacientes que foram diagnosticados com COVID-19, chegando a 86, 96 e 950 indivíduos com essa condição em, respectivamente, `scenario01`, `scenario02` e `scenario03`. Tomando esses identificadores, filtramos os dados das demais tabelas, reduzindo o escopo da análise somente aos pacientes que tiveram COVID-19.
 
@@ -113,9 +113,8 @@ Um dos grandes desafios em adotar técnicas de clusterização é definir o núm
 Decidimos avaliar o intervalo de valores entre 2 e 10 inclusive para os candidatos a `K` em ambos os cenários considerados, conforme mostra a Figura 1. No `scenario01+02`, a ferramenta indicou que `K = 9` seria a melhor configuração, e, no `scenario03`, `K = 4` foi a configuração recomendada. Assim, assumimos esses valores para o número de *clusters* tanto no método K-means quanto no método hierárquico em seus respectivos cenários.
 
 ![Figura 1](assets/scenario_01+02_silhoutte_score.png)
-![Figura 1](assets/scenario_03_silhoutte_score.png)
-
-**Figura 1**: Pontuação de Silhueta para os valores no intervalo de 2 a 10 inclusive, resultados para o `scenario01+02` a esquerda e `scenario03` a direita.
+![Figura 1](assets/scenario_03_silhoutte_score.png)  
+***Figura 1**: Pontuação de Silhueta para os valores no intervalo de 2 a 10 inclusive, resultados para o `scenario01+02` a esquerda e `scenario03` a direita.*
 
 Objetivando aplicar nossos modelos de clusterização no prognóstico de mortalidade de pacientes com COVID-19, realizamos análises de sobrevivência nos *clusters* encontrados pelas técnicas de aprendizagem não supervisionada. Sendo que esse tipo de análise tem por objetivo o estudo temporal da taxa de sobrevivência de um grupo a um determinado evento. Assim, definimos nosso evento como a morte de um paciente devido a COVID-19 e o período de análise como 30 dias após o diagnóstico positivo para a doença. Agrupamos os indivíduos em seus respectivos *clusters* e consideramos a probabilidade de sobrevivência em cada *cluster* como 1 no momento do diagnóstico. 
 
@@ -123,97 +122,97 @@ Definidos os parâmetros iniciais, utilizamos o método de estimativa de Kaplan-
 
 Após todas as configurações, constatações e ajustes citados que foram aplicados a nossa metodologia, chegamos aos *workflows* vistos nas Figuras 2 e 3.
 
-![Figura 2](assets/scenario_01+02_workflow.png)
-**Figura 2:** Workflow dos modelos de clusterização no `scenario01+02`.
+![Figura 2](assets/scenario_01+02_workflow.png)  
+***Figura 2:** Workflow dos modelos de clusterização no `scenario01+02`.*
 
-![Figura 3](assets/scenario_03_workflow.png)
-**Figura 3:** Workflow dos modelos de clusterização no `scenario03`.
+![Figura 3](assets/scenario_03_workflow.png)  
+***Figura 3:** Workflow dos modelos de clusterização no `scenario03`.*
 
 ### [Scenario01+02](data/processed/concatenated_data_scenario01.csv)
 
 No `scenario01+02`, obtemos na Clusterização Hierárquica os *clusters* apresentados na Tabela 3.
  
 | Cluster | Número de Pacientes |
-| -- | -- |
-| C1 | 1 |
-| C2 | 31 |
-| C3 | 2 |
-| C4 | 2 |
-| C5 | 1 |
-| C6 | 42 |
-| C7 | 101 |
-| C8 | 1 |
-| C9 | 1 |
+| ------- | ------------------- |
+| C1      | 1                   |
+| C2      | 31                  |
+| C3      | 2                   |
+| C4      | 2                   |
+| C5      | 1                   |
+| C6      | 42                  |
+| C7      | 101                 |
+| C8      | 1                   |
+| C9      | 1                   |
 
-**Tabela 3:** Distribuição dos pacientes na Clusterização Hierárquica para o `scenario01+02`.
+***Tabela 3:** Distribuição dos pacientes na Clusterização Hierárquica para o `scenario01+02`.*
 
 Sendo que apenas em C3, C4 e C7 existem pacientes que morreram de COVID-19 dentro do intervalo do primeiro mês após o diagnóstico.
 
 Da análise de sobrevivência para essa clusterização, vide a Figura 4, observamos que a probabilidade de sobrevivência para o *cluster* C3 se torna zero a partir do 17º dia. Para C4, a probabilidade de sobrevivência se torna zero em 14 dias. Desse modo, verificamos que todos os indivíduos desses grupos morrem em menos de um mês. Para C7, notamos que a probabilidade de sobrevivência ao fim dos 30 dias se mantém acima de 0.97, ou seja, a taxa de sobrevivência desse grupo é alta. Para os demais *clusters*, uma vez que eles não contêm pacientes falecidos, a probabilidade de sobrevivência permanece 1.
 
-![Figura 4](assets/scenario_01+02_hierarquical_clustering_KM_plot.png)
-**Figura 4:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização Hierárquica do `scenario01+02`.
+![Figura 4](assets/scenario_01+02_hierarquical_clustering_KM_plot.png)  
+***Figura 4:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização Hierárquica do `scenario01+02`.*
 
 Na Clusterização K-means para o `scenario01+02`, os *clusters* resultantes podem ser visualizados na Tabela 4.
 
 | Cluster | Número de Pacientes |
-| -- | --|
-| C1 | 26 |
-| C2 | 26 |
-| C3 | 8 |
-| C4 | 47 |
-| C5 | 10 |
-| C6 | 10 |
-| C7 | 31 |
-| C8 | 11 |
-| C9 | 13 |
+| ------- | ------------------- |
+| C1      | 26                  |
+| C2      | 26                  |
+| C3      | 8                   |
+| C4      | 47                  |
+| C5      | 10                  |
+| C6      | 10                  |
+| C7      | 31                  |
+| C8      | 11                  |
+| C9      | 13                  |
 
-**Tabela 4:** Distribuição dos pacientes na Clusterização K-means para o `scenario01+02`.
+***Tabela 4:** Distribuição dos pacientes na Clusterização K-means para o `scenario01+02`.*
 
 De modo que C1, C3 e C5 são os que apresentaram pacientes que morreram por COVID-19 em até 30 dias.
 
 A Figura 5 apresenta o gráfico das funções probabilidade de sobrevivência para cada *cluster* da Clusterização K-means no `scenario01+02`. A partir dela, notamos que a probabilidade de sobrevivência em C1 se mantém acima de 0.96 e em C3 acima de 0.8 após os 30 dias. Em C5, a partir do 19º dia, a probabilidade de sobrevivência cai para 0.25 e se mantém assim até o final dos 30 dias. Nos demais *clusters*, a taxa de sobrevivência permanece constante.
 
-![Figura 5](assets/scenario_01+02_kmeans_clustering_KM_plot.png)
-**Figura 5:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização K-means do `scenario01+02`.
+![Figura 5](assets/scenario_01+02_kmeans_clustering_KM_plot.png)  
+***Figura 5:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização K-means do `scenario01+02`.*
 
-### [Scenario03](data/processed/concatenated_data_scenario03.csv)
+### [scenario03](data/processed/concatenated_data_scenario03.csv)
 
 No `scenario03`, a Clusterização Hierárquica gerou os *clusters* apresentados na Tabela 5.
 
 | Cluster | Número de Pacientes |
-| -- | -- |
-| C1 | 155 |
-| C2 | 2 |
-| C3 | 1 |
-| C4 | 792 |
+| ------- | ------------------- |
+| C1      | 155                 |
+| C2      | 2                   |
+| C3      | 1                   |
+| C4      | 792                 |
 
-**Tabela 5:** Distribuição dos pacientes na Clusterização Hierárquica para o `scenario03`.
+***Tabela 5:** Distribuição dos pacientes na Clusterização Hierárquica para o `scenario03`.*
 
 Os agrupamentos C1, C2 e C4 apresentaram 3, 2 e 27, respectivamente, mortes por COVID-19.
 
 Na Figura 6, temos os resultados da análise de sobrevivência dos *clusters* da Clusterização Hierárquica no `scenario03`. Observamos nela que a probabilidade de sobrevivência de C2 se torna zero a partir do 20º dia e que as probabilidades de sobrevivência de C1 e C4 permanecem acima de 0.96 até o fim dos 30 dias analisados. Em C3, não notamos redução na probabilidade de sobrevivência inicial.
 
-![Figura 6](assets/scenario_03_hierarquical_clustering_KM_plot.png)
-**Figura 6:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização Hierárquica do `scenario03`.
+![Figura 6](assets/scenario_03_hierarquical_clustering_KM_plot.png)  
+***Figura 6:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização Hierárquica do `scenario03`.*
 
 Por fim, na Clusterização K-means do `scenario03`, os *clusters* resultantes são apresentados na Tabela 6. 
 
 | Cluster | Número de Pacientes |
-| -- | -- |
-| C1 | 419 |
-| C2 | 264 |
-| C3 | 119 |
-| C4 | 148 |
+| ------- | ------------------- |
+| C1      | 419                 |
+| C2      | 264                 |
+| C3      | 119                 |
+| C4      | 148                 |
 
-**Tabela 6:** Distribuição dos pacientes na Clusterização K-means para o `scenario03`.
+***Tabela 6:** Distribuição dos pacientes na Clusterização K-means para o `scenario03`.*
 
 Nessa configuração, apenas o C2 apresentou pacientes que morreram no período analisado, sendo 32 no total. 
 
 A Figura 7 apresenta os resultados obtidos das análises de sobrevivência nos *clusters* da Clusterização K-means no `scenario03`. Nela vemos que a taxa de sobrevivência em C1, C3 e C4 permaneceu igual a 1 em todo o período. No caso de C2, no entanto, a probabilidade de sobrevivência caiu para 0.88 no 20º dia.
 
 ![Figura 7](assets/scenario_03_kmeans_clustering_KM_plot.png)
-**Figura 7:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização K-means do `scenario03`.
+***Figura 7:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização K-means do `scenario03`.*
 
 ### Comparações entre os resultados
 
@@ -228,9 +227,7 @@ Antes mesmo de propriamente começarmos o projeto, enfrentamos uma grande dificu
 
 De início, estávamos muito presos aos dados em questões quantitativas, de modo que, sempre que levantávamos uma pergunta de pesquisa, acreditávamos que os dados fornecidos, nos dois primeiros cenários, não eram suficientes para explorar a proposta. Assim, após discutirmos algumas perguntas e continuarmos sentindo a mesma sensação de insuficiência de dados, solicitamos ajuda ao Prof. André Santanchè. Após a conversa com o professor, melhor orientados, conseguimos desapegar dos aspectos quantitativos dos dados e retornar a uma pergunta de pesquisa que já havíamos discutido, abordando o tema da COVID-19.
 
-Com o assunto definido, após debatermos sobre o período de tempo que seria adotado para realizar a predição, chegamos ao intervalo de um mês e adotamos a seguinte pergunta: 
-
-> Dado um paciente com COVID-19, qual é a probabilidade dele morrer, em decorrência dessa doença, em até 30 dias após a data do diagnóstico?
+Com o assunto definido, após debatermos sobre o período de tempo que seria adotado para realizar a predição, chegamos ao intervalo de um mês e adotamos a seguinte pergunta: *dado um paciente com COVID-19, qual é a probabilidade dele morrer, em decorrência dessa doença, em até 30 dias após a data do diagnóstico?*
 
 Com uma proposta de predição bem definida, esperávamos que a etapa de preparação de dados desse projeto fosse mínima. Uma vez que acreditávamos que o Orange trabalhasse bem com os dados no formato que foram fornecidos, em tabelas fragmentadas e com as *features* em uma só coluna, no entanto, rapidamente percebemos as limitações do *software*. Com isso, optamos por desenvolver a preparação dos dados usando `Python` juntamente com a biblioteca `Pandas`, Essa etapa foi realizada de maneira iterativa, de modo a sempre aprimorar o formato dos dados usados conforme avançávamos no desenvolvimento dos modelos. 
 
@@ -252,11 +249,11 @@ Desse modo, a fim de realizar uma análise direcionada aos pacientes que comumen
 Uma breve visualização de uma das tabelas das proporções por cluster das *features* relacionadas ao grupo de risco pode ser observada na Figura 8. O notebook [`features_proportion_by_cluster.ipynb`](notebooks/features_proportion_by_cluster.ipynb) contém o código utilizado para tratar os resultados das clusterizações e gerar as tabelas citadas.
 
 ![Figura 8](assets/scenario_03_risk_group_table.png)
-**Figura 8:** Registros da tabela de proporções por cluster das *features* relacionadas ao grupo de risco de COVID-19 gerada com base nos resultados da Clusterização K-means do `scenario03`.
+***Figura 8:** Registros da tabela de proporções por cluster das *features* relacionadas ao grupo de risco de COVID-19 gerada com base nos resultados da Clusterização K-means do `scenario03`.*
 
 Ademais, o notebook [`analysis_of_patients_died_by_COVID-19.ipynb`](notebooks/analysis_of_patients_died_by_COVID_19.ipynb) apresenta o código utilizado para obter os pacientes que morreram em consequência da COVID-19 em até 30 dias após o diagnóstico, listar seus dados médicos e os *clusters* que eles fazem parte em cada um dos métodos e cenários estudados. Com essas informações, fomos capazes de investigar com maior precisão os perfis desses pacientes, tornando as nossas análises mais robustas.
 
-### [Scenario01+02](data/processed/concatenated_data_scenario01.csv)
+### [scenario01+02](data/processed/concatenated_data_scenario01.csv)
 
 É válido ressaltar que, para este cenário, temos 182 pacientes que foram diagnosticados com COVID-19, sendo que oito faleceram em decorrência da doença. Além disso, também é importante lembrar que ambas clusterizações resultaram em nove *clusters*.
 
@@ -268,8 +265,8 @@ Iniciando a análise pelos resultados da Clusterização Hierárquica, observamo
 
 A Figura 9 ilustra um boxplot comparativo entre as idades dos pacientes agrupados por cada *cluster*. A partir das medidas contidas nela, fica claro que a idade mediana dos pacientes agrupados por C7 é próxima da idade de risco, além de que esse *cluster* tem mais pacientes com idade acima da mediana do que o contrário. Ademais, temos que os pacientes de C3 e C4 têm idades avançadas, logo podemos supor que eles possivelmente tinham um estado de saúde frágil antes mesmo de serem diagnosticados com COVID-19.
 
-![Figura 9](assets/scenario_01+02_hierarquical_clustering_BP_AGExCluster.png)
-**Figura 9:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização Hierárquica do `scenario01+02`.
+![Figura 9](assets/scenario_01+02_hierarquical_clustering_BP_AGExCluster.png)  
+***Figura 9:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização Hierárquica do `scenario01+02`.*
 
 Em relação à vacinação, C7 tem 80% dos pacientes agrupados vacinados contra o SARS-CoV-2, enquanto C3 e C4 não têm pacientes vacinados.
 
@@ -287,8 +284,8 @@ Agora, analisando os resultados da Clusterização K-means, observamos que os pa
 
 A Figura 10 ilustra um boxplot comparativo entre as idades dos pacientes agrupados por cada *cluster*. A partir das medidas contidas nela, fica evidente que os pacientes de C5 tem a maior idade mediana dentre os *clusters*, seguida pelos pacientes de C1, ela está dentro da faixa de risco. Notamos também que, curiosamente, os pacientes de C3 têm uma idade mediana baixa quando comparada com as idades de risco (60 anos ou mais).
 
-![Figura 10](assets/scenario_01+02_kmeans_clustering_BP_AGExCluster.png)
-**Figura 10:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização K-means do `scenario01+02`.
+![Figura 10](assets/scenario_01+02_kmeans_clustering_BP_AGExCluster.png)  
+***Figura 10:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização K-means do `scenario01+02`.*
 
 Em relação à vacinação, temos que C1, C3 e C5 contam, respectivamente, com cerca de 80%, 50% e 20% de pacientes vacinados contra o SARS-CoV-2.
 
@@ -298,7 +295,7 @@ O *cluster* C3, por sua vez, também agrupa pacientes com todas as comorbidades 
 
 Sobre C5, temos que esse *cluster* também agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco. Como destaques, podemos citar que apresenta 80% dos pacientes com insuficiência cardíaca e 75% dos pacientes com lesão no coração, além de 50% dos pacientes com doença renal diabética e cerca de 33% dos pacientes com insuficiência respiratória aguda. Todos os pacientes do *cluster* que faleceram tinham idades que variam de 56 a 104 anos, não haviam sido vacinados e eram hipertensos, sendo que cinco eram obesos.
 
-### [Scenario03](data/processed/concatenated_data_scenario03.csv)
+### [scenario03](data/processed/concatenated_data_scenario03.csv)
 
 É válido ressaltar que, para este cenário, temos 950 pacientes que foram diagnosticados com COVID-19, sendo que 31 faleceram em decorrência da doença. Além disso, também é importante lembrar que ambas clusterizações resultaram em quatro *clusters*.
 
@@ -310,8 +307,8 @@ Iniciando a análise pelos resultados da Clusterização Hierárquica, observamo
 
 A Figura 11 ilustra um boxplot comparativo entre as idades dos pacientes agrupados por cada *cluster*. A partir das medidas contidas nela, podemos notar que C1 e C4 têm pacientes com idades medianas baixas em comparação com as idades de risco (60 anos ou mais), embora as idades acima de seus limites superiores se aproximem dessa faixa etária. O *cluster* C2, por sua vez, é o que tem os pacientes com a maior idade mediana, sendo ela próxima dos 100 anos.
 
-![Figura 11](assets/scenario_03_hierarquical_clustering_BP_AGExCluster.png)
-**Figura 11:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização Hierárquica do `scenario03`.
+![Figura 11](assets/scenario_03_hierarquical_clustering_BP_AGExCluster.png)  
+***Figura 11:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização Hierárquica do `scenario03`.*
 
 Em relação à vacinação, C1 e C4 têm, respectivamente, cerca de 70% e 60% de seus pacientes vacinados contra o SARS-CoV-2, todavia, C2 não tem pacientes vacinados.
 
@@ -325,14 +322,15 @@ Agora, analisando os resultados da Clusterização K-means, observamos que os pa
 
 A Figura 12 ilustra um boxplot comparativo entre as idades dos pacientes agrupados por cada *cluster*. A partir das medidas contidas nela, segue que C2 é o *cluster* que possui os pacientes com a maior idade mediana dos quatro, sendo que a maioria dos pacientes contidos nele têm idade acima da mediana.
 
-![Figura 12](assets/scenario_03_kmeans_clustering_BP_AGExCluster.png)
-**Figura 12:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização K-means do `scenario03`.
+![Figura 12](assets/scenario_03_kmeans_clustering_BP_AGExCluster.png)  
+***Figura 12:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização K-means do `scenario03`.*
 
 Em relação à vacinação, somente cerca de 60% dos pacientes contidos em C2 tomaram a vacina contra o SARS-CoV-2. O *cluster* em questão agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco: pressão alta, problemas cardíacos e pulmonares, diabetes, obesidade ou câncer. Sendo que podemos destacar as condições relacionadas a problemas cardíacos e pulmonares.
 
 O agrupamento C2 conta com todos os pacientes com lesão no coração e infarto do miocárdio e com cerca de 92% dos com insuficiência cardíaca. Ademais, contém aproximadamente 86% dos pacientes com síndrome do desconforto respiratório agudo, 62,5% dos com bronquite obstrutiva crônica e cerca de 50% dos com insuficiência respiratória aguda. Portanto, a partir de tais dados, podemos levantar a hipótese de que os pacientes mortos podem ser indivíduos que não foram vacinados e/ou tinham doenças relacionadas ao grupo de risco, sendo elas majoritariamente associadas a problemas no coração e nos pulmões. Ademais, é difícil levantar quaisquer hipóteses mais específicas, visto que C2 agrupa um conjunto numeroso e heterogêneo de pacientes.
 
 Por fim, consideramos que os resultados obtidos em ambas clusterizações foram bons, visto que reforçaram a existência dos grupos de risco descritos pela OMS e a efetividade da vacinação em salvar vidas, especialmente daqueles com idade avançada e comorbidades. Todavia, conforme citado anteriormente, acreditamos que a Clusterização Hierárquica tenha desempenhado um melhor papel frente a nossa proposta de predição, uma vez que seus *clusters* são agrupamentos menos generalistas do que os *clusters* gerados na Clusterização K-means.
+
 
 # Conclusão
 > Destacar as principais conclusões obtidas no desenvolvimento do projeto.
