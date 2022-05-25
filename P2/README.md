@@ -242,12 +242,97 @@ Outra alteração importante ao longo do projeto foi a decisão pelo uso limitad
 
 
 # Discussão
-> Fazer um breve debate sobre os resultados alcançados. Aqui pode ser feita a análise dos possíveis motivos que certos resultados foram alcançados. Por exemplo:
-> * por que seu modelo alcançou (ou não) um bom resultado?
-> * por que o modelo de um cenário não se desempenhou bem em outro?
->
-> A discussão dos resultados também pode ser feita opcionalmente na seção de Resultados, na medida em que os resultados são apresentados. Aspectos importantes a serem discutidos: É possível tirar conclusões dos resultados? Quais? Há indicações de direções para estudo? São necessários trabalhos mais profundos?
 
+Para analisar se os resultados obtidos pelas clusterizações foram bons, isto é, para avaliar o desempenho dos modelos de predição, levantamos informações a respeito das condições que geralmente levam um indivíduo a desenvolver um estado de saúde delicado ao contrair o novo coronavírus.
+
+A OMS definiu em seu Q&A [1] que pessoas com 60 anos ou mais e aquelas com problemas médicos subjacentes, como pressão alta, problemas cardíacos e pulmonares, diabetes, obesidade ou câncer, correm maior risco de ficarem severamente doentes caso sejam infectadas pelo SARS-CoV-2.
+
+Desse modo, a fim de realizar uma análise direcionada aos pacientes que comumente falecem em decorrência da COVID-19, investigamos as *features* (condições, imunizações ou procedimentos) utilizadas nas clusterizações que estão relacionadas ao grupo de risco da doença em questão. Em seguida, com os resultados dos modelos de previsão em mãos e com as tais *features* selecionadas, construímos tabelas que descrevem suas proporções em cada *cluster* para as clusterizações de cada cenário.
+
+Uma breve visualização de uma das tabelas das proporções por cluster das *features* relacionadas ao grupo de risco pode ser observada na Figura 8. O notebook [`features_proportion_by_cluster.ipynb`](notebooks/features_proportion_by_cluster.ipynb) contém o código utilizado para tratar os resultados das clusterizações e gerar as tabelas citadas.
+
+![Figura 8](assets/scenario_03_risk_group_table.png)
+**Figura 8:** Registros da tabela de proporções por cluster das *features* relacionadas ao grupo de risco de COVID-19 gerada com base nos resultados da Clusterização K-means do `scenario03`.
+
+Ademais, o notebook [`analysis_of_patients_died_by_COVID-19.ipynb`](notebooks/analysis_of_patients_died_by_COVID_19.ipynb) apresenta o código utilizado para obter os pacientes que morreram em consequência da COVID-19 em até 30 dias após o diagnóstico, listar seus dados médicos e os *clusters* que eles fazem parte em cada um dos métodos e cenários estudados. Com essas informações, fomos capazes de investigar com maior precisão os perfis desses pacientes, tornando as nossas análises mais robustas.
+
+### [Scenario01+02](data/processed/concatenated_data_scenario01.csv)
+
+É válido ressaltar que, para este cenário, temos 182 pacientes que foram diagnosticados com COVID-19, sendo que oito faleceram em decorrência da doença. Além disso, também é importante lembrar que ambas clusterizações resultaram em nove *clusters*.
+
+Iniciando a análise pelos resultados da Clusterização Hierárquica, observamos que os pacientes que faleceram em decorrência da doença sob estudo estão distribuídos nos *clusters* C3, C4 e C7, portanto focaremos neles. Segue ainda que:
+
+- C3 - agrupa dois pacientes, ambos mortos pela doença;
+- C4 - agrupa dois pacientes, ambos mortos pela doença e
+- C7 - agrupa 101 pacientes, sendo quatro mortos pela doença.
+
+A Figura 9 ilustra um boxplot comparativo entre as idades dos pacientes agrupados por cada *cluster*. A partir das medidas contidas nela, fica claro que a idade mediana dos pacientes agrupados por C7 é próxima da idade de risco, além de que esse *cluster* tem mais pacientes com idade acima da mediana do que o contrário. Ademais, temos que os pacientes de C3 e C4 têm idades avançadas, logo podemos supor que eles possivelmente tinham um estado de saúde frágil antes mesmo de serem diagnosticados com COVID-19.
+
+![Figura 9](assets/scenario_01+02_hierarquical_clustering_BP_AGExCluster.png)
+**Figura 9:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização Hierárquica do `scenario01+02`.
+
+Em relação à vacinação, C7 tem 80% dos pacientes agrupados vacinados contra o SARS-CoV-2, enquanto C3 e C4 não têm pacientes vacinados.
+
+Sobre C3, notamos a presença de pacientes com problemas cardíacos e/ou pulmonares, além das outras comorbidades relacionadas ao grupo de risco, exceto diabetes. Em destaque, agrupa 50% dos pacientes com lesão no coração e 40% dos pacientes com insuficiência cardíaca. Os pacientes falecidos tinham 84 e 104, ambos tinham hipertensão, síndrome do desconforto respiratório agudo, insuficiência respiratória aguda e obesidade (índice de massa corporal próximo a 30).
+
+O *cluster* C4, por sua vez, também agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco. Todavia, esse *cluster* agrupa pacientes com problemas que os do C3 não têm, como pré-diabetes, diabetes, parada cardíaca e doença arterial coronariana. Os falecidos tinham 89 e 104 anos, ambos tinham doença arterial coronariana, embolia pulmonar aguda, insuficiência respiratória aguda e desconforto respiratório
+
+Sobre C7, notamos que ele agrupa cerca de 50% a 70% dos pacientes com condições associadas às *features* relacionadas ao grupo de risco. Como destaques, segue que esse *cluster* agrupa cerca de 70% dos pacientes com doença arterial coronariana e pré-diabetes, além de cerca de 76% dos pacientes obesos (índice de massa corporal próximo a 30). Os pacientes que faleceram tinham idades de 56 a 75 anos, todos tinham embolia pulmonar aguda, insuficiência respiratória aguda e desconforto respiratório. Além disso, três deles tinham hipertensão e eram obesos (índice de massa corporal próximo a 30), e somente um havia tomado vacina.
+
+Agora, analisando os resultados da Clusterização K-means, observamos que os pacientes que faleceram em decorrência da doença sob estudo estão distribuídos nos *clusters* C1, C3 e C5, portanto focaremos neles. Segue ainda que:
+
+- C1 - agrupa 26 pacientes, sendo um morto pela doença;
+- C3 - agrupa oito pacientes, sendo um morto pela doença e
+- C5 - agrupa 10 pacientes, sendo seis mortos pela doença.
+
+A Figura 10 ilustra um boxplot comparativo entre as idades dos pacientes agrupados por cada *cluster*. A partir das medidas contidas nela, fica evidente que os pacientes de C5 tem a maior idade mediana dentre os *clusters*, seguida pelos pacientes de C1, ela está dentro da faixa de risco. Notamos também que, curiosamente, os pacientes de C3 têm uma idade mediana baixa quando comparada com as idades de risco (60 anos ou mais).
+
+![Figura 10](assets/scenario_01+02_kmeans_clustering_BP_AGExCluster.png)
+**Figura 10:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização K-means do `scenario01+02`.
+
+Em relação à vacinação, temos que C1, C3 e C5 contam, respectivamente, com cerca de 80%, 50% e 20% de pacientes vacinados contra o SARS-CoV-2.
+
+Sobre C1, temos que esse *cluster* agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco: pressão alta, problemas cardíacos e pulmonares, diabetes, obesidade e câncer. Embora seja o agrupamento com o maior número de pacientes dentre os que têm falecidos, conta com uma única morte, muito provavelmente pela alta taxa de vacinados. O paciente que faleceu tinha 72 anos, havia sido vacinado, tinha diversos problemas pulmonares (como embolia pulmonar aguda, insuficiência respiratória aguda e enfisema pulmonar) e havia feito uma cirurgia de redução de volume pulmonar.
+
+O *cluster* C3, por sua vez, também agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco. Entretanto, diferentemente de C1, não apresenta pacientes com doenças como diabetes, enfisema pulmonar, neutropenia febril e hiperglicemia, mas apresenta pacientes com doenças como insuficiência cardíaca, lesão no coração e neutropenia. O paciente que faleceu tinha 89 anos, não havia sido vacinado, era obeso, tinha problemas cardíacos (como lesão no coração e insuficiência cardíaca) e pulmonares (como embolia pulmonar aguda e insuficiência respiratória aguda).
+
+Sobre C5, temos que esse *cluster* também agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco. Como destaques, podemos citar que apresenta 80% dos pacientes com insuficiência cardíaca e 75% dos pacientes com lesão no coração, além de 50% dos pacientes com doença renal diabética e cerca de 33% dos pacientes com insuficiência respiratória aguda. Todos os pacientes do *cluster* que faleceram tinham idades que variam de 56 a 104 anos, não haviam sido vacinados e eram hipertensos, sendo que cinco eram obesos.
+
+### [Scenario03](data/processed/concatenated_data_scenario03.csv)
+
+É válido ressaltar que, para este cenário, temos 950 pacientes que foram diagnosticados com COVID-19, sendo que 31 faleceram em decorrência da doença. Além disso, também é importante lembrar que ambas clusterizações resultaram em quatro *clusters*.
+
+Iniciando a análise pelos resultados da Clusterização Hierárquica, observamos que os pacientes que faleceram em decorrência da doença sob estudo estão distribuídos nos *clusters* C1, C2 e C4, portanto focaremos neles. Segue ainda que:
+
+- C1 - agrupa 155 pacientes, sendo três mortos pela doença;
+- C2 - agrupa dois pacientes, ambos mortos pela doença e
+- C4 - agrupa 792 pacientes, sendo 26 mortos pela doença.
+
+A Figura 11 ilustra um boxplot comparativo entre as idades dos pacientes agrupados por cada *cluster*. A partir das medidas contidas nela, podemos notar que C1 e C4 têm pacientes com idades medianas baixas em comparação com as idades de risco (60 anos ou mais), embora as idades acima de seus limites superiores se aproximem dessa faixa etária. O *cluster* C2, por sua vez, é o que tem os pacientes com a maior idade mediana, sendo ela próxima dos 100 anos.
+
+![Figura 11](assets/scenario_03_hierarquical_clustering_BP_AGExCluster.png)
+**Figura 11:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização Hierárquica do `scenario03`.
+
+Em relação à vacinação, C1 e C4 têm, respectivamente, cerca de 70% e 60% de seus pacientes vacinados contra o SARS-CoV-2, todavia, C2 não tem pacientes vacinados.
+
+Sobre C1, temos que os pacientes agrupados têm todas as comorbidades relacionadas ao grupo de risco. De modo que podemos destacar que o *cluster* tem cerca de 30% dos pacientes com obesidade severa (índice de massa corporal próximo a 40) e enfisema pulmonar. Todos os pacientes que faleceram não haviam sido vacinados, sendo que dois deles (47 e 53 anos) eram hipertensos e obesos. O terceiro paciente era mais jovem (28 anos), tinha leucemia e também neutropenia febril.
+
+Sobre C2, segue que seus pacientes têm problemas respiratórios, doença arterial coronariana, hipertensão e pré-diabetes. Desse modo, podemos levantar a hipótese que seus pacientes morreram por conta do estado de saúde debilitado - em razão da idade avançada e das comorbidades - e por não terem sido vacinados.
+
+Sobre C4, temos que os pacientes agrupados também têm todas as comorbidades relacionadas ao grupo de risco, sendo que o *cluster* contém cerca de 80% a 100% dos pacientes com a grande maioria das condições associadas às *features* relacionadas ao grupo de risco. Em específico, podemos destacar que agrupa todos os pacientes com doença renal diabética, neoplasia de próstata, carcinoma em situ de próstata, neoplasia maligna do cólon e infarto do miocárdio. Sobre os pacientes falecidos, observamos que suas idades variam de 23 a 108 anos, todos tinham insuficiência respiratória aguda e desconforto respiratório. Além disso, a maioria deles não havia tomado a vacina contra a COVID-19.
+
+Agora, analisando os resultados da Clusterização K-means, observamos que os pacientes que faleceram em decorrência da doença em questão estão distribuídos no *cluster* C2, portanto focaremos unicamente nele. Ou seja, os 31 pacientes que faleceram estão dentre os 264 agrupados por esse *cluster*.
+
+A Figura 12 ilustra um boxplot comparativo entre as idades dos pacientes agrupados por cada *cluster*. A partir das medidas contidas nela, segue que C2 é o *cluster* que possui os pacientes com a maior idade mediana dos quatro, sendo que a maioria dos pacientes contidos nele têm idade acima da mediana.
+
+![Figura 12](assets/scenario_03_kmeans_clustering_BP_AGExCluster.png)
+**Figura 12:** Boxplot comparativo entre as idades dos pacientes agrupados em cada cluster da Clusterização K-means do `scenario03`.
+
+Em relação à vacinação, somente cerca de 60% dos pacientes contidos em C2 tomaram a vacina contra o SARS-CoV-2. O *cluster* em questão agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco: pressão alta, problemas cardíacos e pulmonares, diabetes, obesidade ou câncer. Sendo que podemos destacar as condições relacionadas a problemas cardíacos e pulmonares.
+
+O agrupamento C2 conta com todos os pacientes com lesão no coração e infarto do miocárdio e com cerca de 92% dos com insuficiência cardíaca. Ademais, contém aproximadamente 86% dos pacientes com síndrome do desconforto respiratório agudo, 62,5% dos com bronquite obstrutiva crônica e cerca de 50% dos com insuficiência respiratória aguda. Portanto, a partir de tais dados, podemos levantar a hipótese de que os pacientes mortos podem ser indivíduos que não foram vacinados e/ou tinham doenças relacionadas ao grupo de risco, sendo elas majoritariamente associadas a problemas no coração e nos pulmões. Ademais, é difícil levantar quaisquer hipóteses mais específicas, visto que C2 agrupa um conjunto numeroso e heterogêneo de pacientes.
+
+Por fim, consideramos que os resultados obtidos em ambas clusterizações foram bons, visto que reforçaram a existência dos grupos de risco descritos pela OMS e a efetividade da vacinação em salvar vidas, especialmente daqueles com idade avançada e comorbidades. Todavia, conforme citado anteriormente, acreditamos que a Clusterização Hierárquica tenha desempenhado um melhor papel frente a nossa proposta de predição, uma vez que seus *clusters* são agrupamentos menos generalistas do que os *clusters* gerados na Clusterização K-means.
 
 # Conclusão
 > Destacar as principais conclusões obtidas no desenvolvimento do projeto.
