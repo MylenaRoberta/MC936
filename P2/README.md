@@ -128,7 +128,7 @@ Após todas as configurações, constatações e ajustes citados que foram aplic
 ![Figura 3](assets/scenario_03_workflow.png)  
 ***Figura 3:** Workflow dos modelos de clusterização no `scenario03`.*
 
-### [Scenario01+02](data/processed/concatenated_data_scenario01.csv)
+### scenario01+02
 
 No `scenario01+02`, obtemos na Clusterização Hierárquica os *clusters* apresentados na Tabela 3.
  
@@ -176,7 +176,7 @@ A Figura 5 apresenta o gráfico das funções probabilidade de sobrevivência pa
 ![Figura 5](assets/scenario_01+02_kmeans_clustering_KM_plot.png)  
 ***Figura 5:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização K-means do `scenario01+02`.*
 
-### [scenario03](data/processed/concatenated_data_scenario03.csv)
+### scenario03
 
 No `scenario03`, a Clusterização Hierárquica gerou os *clusters* apresentados na Tabela 5.
 
@@ -253,7 +253,7 @@ Uma breve visualização de uma das tabelas das proporções por cluster das *fe
 
 Ademais, o notebook [`analysis_of_patients_died_by_COVID-19.ipynb`](notebooks/analysis_of_patients_died_by_COVID_19.ipynb) apresenta o código utilizado para obter os pacientes que morreram em consequência da COVID-19 em até 30 dias após o diagnóstico, listar seus dados médicos e os *clusters* que eles fazem parte em cada um dos métodos e cenários estudados. Com essas informações, fomos capazes de investigar com maior precisão os perfis desses pacientes, tornando as nossas análises mais robustas.
 
-### [scenario01+02](data/processed/concatenated_data_scenario01.csv)
+### scenario01+02
 
 É válido ressaltar que, para este cenário, temos 182 pacientes que foram diagnosticados com COVID-19, sendo que oito faleceram em decorrência da doença. Além disso, também é importante lembrar que ambas clusterizações resultaram em nove *clusters*.
 
@@ -295,7 +295,7 @@ O *cluster* C3, por sua vez, também agrupa pacientes com todas as comorbidades 
 
 Sobre C5, temos que esse *cluster* também agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco. Como destaques, podemos citar que apresenta 80% dos pacientes com insuficiência cardíaca e 75% dos pacientes com lesão no coração, além de 50% dos pacientes com doença renal diabética e cerca de 33% dos pacientes com insuficiência respiratória aguda. Todos os pacientes do *cluster* que faleceram tinham idades que variam de 56 a 104 anos, não haviam sido vacinados e eram hipertensos, sendo que cinco eram obesos.
 
-### [scenario03](data/processed/concatenated_data_scenario03.csv)
+### scenario03
 
 É válido ressaltar que, para este cenário, temos 950 pacientes que foram diagnosticados com COVID-19, sendo que 31 faleceram em decorrência da doença. Além disso, também é importante lembrar que ambas clusterizações resultaram em quatro *clusters*.
 
@@ -328,6 +328,8 @@ A Figura 12 ilustra um boxplot comparativo entre as idades dos pacientes agrupad
 Em relação à vacinação, somente cerca de 60% dos pacientes contidos em C2 tomaram a vacina contra o SARS-CoV-2. O *cluster* em questão agrupa pacientes com todas as comorbidades relacionadas ao grupo de risco: pressão alta, problemas cardíacos e pulmonares, diabetes, obesidade ou câncer. Sendo que podemos destacar as condições relacionadas a problemas cardíacos e pulmonares.
 
 O agrupamento C2 conta com todos os pacientes com lesão no coração e infarto do miocárdio e com cerca de 92% dos com insuficiência cardíaca. Ademais, contém aproximadamente 86% dos pacientes com síndrome do desconforto respiratório agudo, 62,5% dos com bronquite obstrutiva crônica e cerca de 50% dos com insuficiência respiratória aguda. Portanto, a partir de tais dados, podemos levantar a hipótese de que os pacientes mortos podem ser indivíduos que não foram vacinados e/ou tinham doenças relacionadas ao grupo de risco, sendo elas majoritariamente associadas a problemas no coração e nos pulmões. Ademais, é difícil levantar quaisquer hipóteses mais específicas, visto que C2 agrupa um conjunto numeroso e heterogêneo de pacientes.
+
+### Resumo da conclusão
 
 Por fim, consideramos que os resultados obtidos em ambas clusterizações foram bons, visto que reforçaram a existência dos grupos de risco descritos pela OMS e a efetividade da vacinação em salvar vidas, especialmente daqueles com idade avançada e comorbidades. Todavia, conforme citado anteriormente, acreditamos que a Clusterização Hierárquica tenha desempenhado um melhor papel frente a nossa proposta de predição, uma vez que seus *clusters* são agrupamentos menos generalistas do que os *clusters* gerados na Clusterização K-means.
 
