@@ -99,25 +99,127 @@ Isto é, ao final da preparação de dados, geramos as tabelas: links das tabela
 
 
 # Resultados Obtidos
-> Esta seção pode opcionalmente ser apresentada em conjunto com a metodologia, intercalando método e resultados.
->
-> Descreva etapas para obtenção do modelo, incluindo tratamento de dados, se houve.
->
-> Apresente o seu modelo de predição e resultados alcançados.
-> Para cada modelo, apresente no mínimo:
-> * quais os dados sobre o paciente que serão usados para a predição;
-> * qual a abordagem/modelo adotado;
-> * resultados do preditor (apresente da forma mais rica possível, usando tabelas e gráficos - métricas e curva ROC são bem vindos);
-> * breve discussão sobre os resultados obtidos.
->
-> Nesta seção, lembre-se das sugestões de análise:
-> * analisar diferentes composições de treinamento e análise do modelo:
->   * um modelo treinado/validado no cenário 1 e testado no cenário 2 e vice-versa;
->   * um modelo treinado e validado com os dados dos dois cenários;
->   * nos modelos dos dois itens anteriores:
->     * houve diferença de resultados?
->     * como analisar e interpretar as diferenças?
-> * testar diferentes composições de dados sobre o paciente para a predição (por exemplo, quantidade diversificadas de número de itens).
+
+### Modelo
+
+Considerando que no `scenario01` e no `scenario02` existem poucos pacientes diagnosticados com COVID-19 (86 e 92, respectivamente), optamos por concatená-los para obtermos um grupo mais significativo de indivíduos na amostra. Assim, nas análises apresentadas posteriormente faremos comparações entre as duas técnicas de clusterização dentro do `scenario01+02` e dentro do `scenario03`, além de comparações entre os resultados das clusterizações dos dois cenários.
+
+Devido a nossa abordagem de preparação de dados, ambos os cenários possuem um número diferente de *features*, são 295 no `scenario01+02` e 441 no `scenario03`. Decidimos manter essa diferença quantitativa de *features* para identificar se as diferentes dimensionalidades teriam algum efeito considerável nos resultados das técnicas de clusterização entre os dois cenários.
+
+Tomando como base a preparação dos dados para clusterização proposta por Y. Komaru, T. Yoshida, et al. no artigo "Hierarchical Clustering Analysis for Predicting 1-Year Mortality After Starting Hemodialysis" [7], analisamos as correlações existentes entre as *features* presentes em cada cenário. O objetivo dessa análise era encontrar *features* fortemente correlacionadas, de modo a remover as que não agregassem valor significativo para a clusterização. Para tanto, definimos que, para o par que apresentasse uma correlação maior ou igual a 0.6, uma delas deixaria de ser considerada para a clusterização. Como resultados, obtivemos que apenas `AGE` e `BIRTHDATE` apresentaram correlação acima de 0.6, o que decorre do fato de que  `AGE` foi gerada a partir de `BIRTHDATE`. Portanto, optamos por não considerar `BIRTHDATE`como uma *feature*.
+
+Um dos grandes desafios em adotar técnicas de clusterização é definir o número de *clusters* que serão utilizados no modelo. No caso do método K-means, o `Orange` apresenta um recurso, denominado como método Pontuação da Silhueta (*Silhouette Score*) [8], que nos permite definir e avaliar um conjunto de possíveis valores para o número de *clusters* (`K`). Nesse método, para cada candidato ao valor ideal de `K`, é calculada uma pontuação que está relacionada à similaridade que um elemento apresenta em relação ao seu *cluster* quando comparado aos demais *clusters*. Assim, a melhor escolha para o número de clusters `K` é o valor que apresenta a maior pontuação dentro do conjunto avaliado. 
+
+Decidimos avaliar o intervalo de valores entre 2 e 10 inclusive para os candidatos a `K` em ambos os cenários considerados, conforme mostra a Figura 1. No `scenario01+02`, a ferramenta indicou que `K = 9` seria a melhor configuração, e, no `scenario03`, `K = 4` foi a configuração recomendada. Assim, assumimos esses valores para o número de *clusters* tanto no método K-means quanto no método hierárquico em seus respectivos cenários.
+
+![Figura 1](assets/scenario_01+02_silhoutte_score.png)
+![Figura 1](assets/scenario_03_silhoutte_score.png)
+
+**Figura 1**: Pontuação de Silhueta para os valores no intervalo de 2 a 10 inclusive, resultados para o `scenario01+02` a esquerda e `scenario03` a direita.
+
+Objetivando aplicar nossos modelos de clusterização no prognóstico de mortalidade de pacientes com COVID-19, realizamos análises de sobrevivência nos *clusters* encontrados pelas técnicas de aprendizagem não supervisionada. Sendo que esse tipo de análise tem por objetivo o estudo temporal da taxa de sobrevivência de um grupo a um determinado evento. Assim, definimos nosso evento como a morte de um paciente devido a COVID-19 e o período de análise como 30 dias após o diagnóstico positivo para a doença. Agrupamos os indivíduos em seus respectivos *clusters* e consideramos a probabilidade de sobrevivência em cada *cluster* como 1 no momento do diagnóstico. 
+
+Definidos os parâmetros iniciais, utilizamos o método de estimativa de Kaplan-Meier [9] para plotar, no período estudado, a função probabilidade de sobrevivência de cada *cluster*. Nesse método, a probabilidade de sobrevivência de um grupo diminui à medida que seus integrantes experimentam o evento. Em nossas análises, isso acontecia através da observação das *features* `TIME (DAYS)` e `DIED IN ON MONTH`. A probabilidade de sobrevivência de um *cluster* diminui à medida que `DIED IN ONE MONTH` se tornar 1 no dia indicado por `TIME (DAYS)` para algum paciente pertencente àquele *cluster*.
+
+Após todas as configurações, constatações e ajustes citados que foram aplicados a nossa metodologia, chegamos aos *workflows* vistos nas Figuras 2 e 3.
+
+![Figura 2](assets/scenario_01+02_workflow.png)
+**Figura 2:** Workflow dos modelos de clusterização no `scenario01+02`.
+
+![Figura 3](assets/scenario_03_workflow.png)
+**Figura 3:** Workflow dos modelos de clusterização no `scenario03`.
+
+### [Scenario01+02](data/processed/concatenated_data_scenario01.csv)
+
+No `scenario01+02`, obtemos na Clusterização Hierárquica os *clusters* apresentados na Tabela 3.
+ 
+| Cluster | Número de Pacientes |
+| -- | -- |
+| C1 | 1 |
+| C2 | 31 |
+| C3 | 2 |
+| C4 | 2 |
+| C5 | 1 |
+| C6 | 42 |
+| C7 | 101 |
+| C8 | 1 |
+| C9 | 1 |
+
+**Tabela 3:** Distribuição dos pacientes na Clusterização Hierárquica para o `scenario01+02`.
+
+Sendo que apenas em C3, C4 e C7 existem pacientes que morreram de COVID-19 dentro do intervalo do primeiro mês após o diagnóstico.
+
+Da análise de sobrevivência para essa clusterização, vide a Figura 4, observamos que a probabilidade de sobrevivência para o *cluster* C3 se torna zero a partir do 17º dia. Para C4, a probabilidade de sobrevivência se torna zero em 14 dias. Desse modo, verificamos que todos os indivíduos desses grupos morrem em menos de um mês. Para C7, notamos que a probabilidade de sobrevivência ao fim dos 30 dias se mantém acima de 0.97, ou seja, a taxa de sobrevivência desse grupo é alta. Para os demais *clusters*, uma vez que eles não contêm pacientes falecidos, a probabilidade de sobrevivência permanece 1.
+
+![Figura 4](assets/scenario_01+02_hierarquical_clustering_KM_plot.png)
+**Figura 4:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização Hierárquica do `scenario01+02`.
+
+Na Clusterização K-means para o `scenario01+02`, os *clusters* resultantes podem ser visualizados na Tabela 4.
+
+| Cluster | Número de Pacientes |
+| -- | --|
+| C1 | 26 |
+| C2 | 26 |
+| C3 | 8 |
+| C4 | 47 |
+| C5 | 10 |
+| C6 | 10 |
+| C7 | 31 |
+| C8 | 11 |
+| C9 | 13 |
+
+**Tabela 4:** Distribuição dos pacientes na Clusterização K-means para o `scenario01+02`.
+
+De modo que C1, C3 e C5 são os que apresentaram pacientes que morreram por COVID-19 em até 30 dias.
+
+A Figura 5 apresenta o gráfico das funções probabilidade de sobrevivência para cada *cluster* da Clusterização K-means no `scenario01+02`. A partir dela, notamos que a probabilidade de sobrevivência em C1 se mantém acima de 0.96 e em C3 acima de 0.8 após os 30 dias. Em C5, a partir do 19º dia, a probabilidade de sobrevivência cai para 0.25 e se mantém assim até o final dos 30 dias. Nos demais *clusters*, a taxa de sobrevivência permanece constante.
+
+![Figura 5](assets/scenario_01+02_kmeans_clustering_KM_plot.png)
+**Figura 5:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização K-means do `scenario01+02`.
+
+### [Scenario03](data/processed/concatenated_data_scenario03.csv)
+
+No `scenario03`, a Clusterização Hierárquica gerou os *clusters* apresentados na Tabela 5.
+
+| Cluster | Número de Pacientes |
+| -- | -- |
+| C1 | 155 |
+| C2 | 2 |
+| C3 | 1 |
+| C4 | 792 |
+
+**Tabela 5:** Distribuição dos pacientes na Clusterização Hierárquica para o `scenario03`.
+
+Os agrupamentos C1, C2 e C4 apresentaram 3, 2 e 27, respectivamente, mortes por COVID-19.
+
+Na Figura 6, temos os resultados da análise de sobrevivência dos *clusters* da Clusterização Hierárquica no `scenario03`. Observamos nela que a probabilidade de sobrevivência de C2 se torna zero a partir do 20º dia e que as probabilidades de sobrevivência de C1 e C4 permanecem acima de 0.96 até o fim dos 30 dias analisados. Em C3, não notamos redução na probabilidade de sobrevivência inicial.
+
+![Figura 6](assets/scenario_03_hierarquical_clustering_KM_plot.png)
+**Figura 6:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização Hierárquica do `scenario03`.
+
+Por fim, na Clusterização K-means do `scenario03`, os *clusters* resultantes são apresentados na Tabela 6. 
+
+| Cluster | Número de Pacientes |
+| -- | -- |
+| C1 | 419 |
+| C2 | 264 |
+| C3 | 119 |
+| C4 | 148 |
+
+**Tabela 6:** Distribuição dos pacientes na Clusterização K-means para o `scenario03`.
+
+Nessa configuração, apenas o C2 apresentou pacientes que morreram no período analisado, sendo 32 no total. 
+
+A Figura 7 apresenta os resultados obtidos das análises de sobrevivência nos *clusters* da Clusterização K-means no `scenario03`. Nela vemos que a taxa de sobrevivência em C1, C3 e C4 permaneceu igual a 1 em todo o período. No caso de C2, no entanto, a probabilidade de sobrevivência caiu para 0.88 no 20º dia.
+
+![Figura 7](assets/scenario_03_kmeans_clustering_KM_plot.png)
+**Figura 7:** Curvas Kaplan-Meier dos clusters obtidos na Clusterização K-means do `scenario03`.
+
+### Comparações entre os resultados
+
+Dos resultados obtidos em todas as configurações e cenários testados, concluímos que existem configurações de *clusters* que agrupam pacientes que apresentam características que os tornam extremamente vulneráveis ao óbito por COVID-19, dado que em alguns dos *clusters* observados a taxa de mortalidade é alta. Notamos a presença desses *clusters* principalmente nos resultados do método hierárquico em ambos os cenários. O método K-means gerou os *clusters* com a melhor distribuição de pacientes, no entanto, os agrupamentos se mostraram mais generalistas durante a análise de sobrevivência, uma vez que, na maioria dos *clusters* observados, o número de mortes foi amortecido pela maior quantidade de indivíduos nos grupos.
+
+Notamos que, em relação a predição de mortalidade no intervalo de 30 dias, o `scenario01+02` se mostrou mais pessimista, especialmente na Clusterização Hierárquica, em que os *clusters* mais vulneráveis a COVID-19 apresentam probabilidade de sobrevivência nula ao final dos 30 dias. No `scenario03`, também observamos um *cluster* bastante vulnerável à doença na Clusterização Hierárquica. Todavia, no método K-means os *clusters* apresentaram uma maior probabilidade de sobrevivência ao final dos 30 dias se comparado ao `scenario01+02`.
 
 
 # Evolução do Projeto
