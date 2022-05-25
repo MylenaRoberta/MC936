@@ -329,20 +329,26 @@ Em relação à vacinação, somente cerca de 60% dos pacientes contidos em C2 t
 
 O agrupamento C2 conta com todos os pacientes com lesão no coração e infarto do miocárdio e com cerca de 92% dos com insuficiência cardíaca. Ademais, contém aproximadamente 86% dos pacientes com síndrome do desconforto respiratório agudo, 62,5% dos com bronquite obstrutiva crônica e cerca de 50% dos com insuficiência respiratória aguda. Portanto, a partir de tais dados, podemos levantar a hipótese de que os pacientes mortos podem ser indivíduos que não foram vacinados e/ou tinham doenças relacionadas ao grupo de risco, sendo elas majoritariamente associadas a problemas no coração e nos pulmões. Ademais, é difícil levantar quaisquer hipóteses mais específicas, visto que C2 agrupa um conjunto numeroso e heterogêneo de pacientes.
 
-### Resumo da conclusão
+### Conclusão das análises
 
 Por fim, consideramos que os resultados obtidos em ambas clusterizações foram bons, visto que reforçaram a existência dos grupos de risco descritos pela OMS e a efetividade da vacinação em salvar vidas, especialmente daqueles com idade avançada e comorbidades. Todavia, conforme citado anteriormente, acreditamos que a Clusterização Hierárquica tenha desempenhado um melhor papel frente a nossa proposta de predição, uma vez que seus *clusters* são agrupamentos menos generalistas do que os *clusters* gerados na Clusterização K-means.
 
 
 # Conclusão
-> Destacar as principais conclusões obtidas no desenvolvimento do projeto.
->
-> Destacar os principais desafios enfrentados.
->
-> Principais lições aprendidas.
->
-> Trabalhos Futuros:
-> * o que poderia ser melhorado se houvesse mais tempo?
+
+Expostos todos os resultados obtidos e análises realizadas, acreditamos que os modelos propostos alcançaram um resultado satisfatório, mesmo com a heterogeneidade de alguns *clusters*, algo que dificultou consideravelmente as análises. Em sua maioria, os pacientes que vieram a óbito foram agrupados com outros indivíduos que apresentavam comorbidades que os incluíam no grupo de risco ao contrair COVID-19. Ainda identificamos uma constância na presença de pacientes com problemas pulmonares, a comorbidade mais conhecida do grupo de risco, e cardíacos, uma vez que a alta carga inflamatória associada ao COVID-19 leva a inflamação vascular, miocardites e arritmias cardíacas [10], colocando pacientes com comorbidades cardíacas também no grupo de risco.
+
+Ainda, foi possível perceber o efeito benéfico das vacinas, uma vez que observando aqueles pacientes que vieram a óbito pela COVID-19, um número muito reduzido estava imunizado. Dentre esses, a presença de inúmeras outras comorbidades e a idade avançada pode ter sido o principal fator que ocasionou o falecimento. 
+
+Além dos desafios de determinar o número de *clusters* a serem utilizados nos modelos e de escolher a pergunta de pesquisa já comentados anteriormente, cabe ressaltar outras etapas árduas no decorrer do projeto. O tratamento de dados se mostrou desafiador por ser uma etapa interativa, visando obter o melhor formato para se trabalhar com as informações no `Orange`. Ainda, a análise dos resultados obtidos se mostrou desafiadora não só por ser o primeiro contato do grupo com *Machine Learning*, mas também pelo conhecimento médico requerido em algumas análises. Tais dificuldades foram superadas fazendo uso da análise de sobrevivência juntamente com informações já conhecidas sobre a COVID-19, como os grupos de risco.
+
+No decorrer desse projeto, o grupo como um todo teve maior contato com o *software* `Orange`, e só então foi possível compreender melhor suas limitações e seus enfoques de modo a entender melhor a função dessa ferramenta. Ainda, após a dificuldade com o levantamento da pergunta de pesquisa e a orientação do Prof. André Santanchè mudamos nossa percepção sobre a definição de temáticas, superando o entrave inicial relacionado à baixa quantidade de dados.
+
+Em um cenário com mais tempo disponível, seria interessante trazer para o modelo proposto as consultas/encontros dos pacientes e as datas presentes nas demais tabelas, desenvolvendo uma análise temporal do quadro clínico do paciente. Essa abordagem possibilitaria dar mais peso a eventos que ocorreram próximos ao diagnóstico de COVID-19 e reduzir o peso daqueles que estão muito distantes. 
+
+Ademais, seria interessante fazer uso dos dados com algum método de aprendizagem supervisionado, visto que temos conhecimento dos desfechos dos pacientes no intervalo de tempo estudado. Possivelmente, a aplicação de modelos como SVM (*Support Vector Machine*), Regressão Logística e Árvore de Decisões apresentaria resultados relevantes para a predição de mortes dos pacientes e facilitaria o intercâmbio entre os cenários estudados, realizando o treinamento do modelo com um cenário e um teste efetivo com outro.
+
+Por fim, poderíamos incluir o quarto cenário de dados fornecido nas análises, fazendo comparações do comportamento do modelo para diferentes quantidades de dados e validando sua consistência. Isso desde que adotássemos ferramentas capazes de processar a quantidade de dados contidas no `scenario04`.
 
 
 # Referências Bibliográficas
