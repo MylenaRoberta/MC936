@@ -13,12 +13,16 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 # Referência bibliográfica do artigo lido
 
-> Coloque aqui a referência bibliográfica do artigo lido, incluindo o link para o site.
+Azuaje, F.J., Rodius, S., Zhang, L. *et al.* Information encoded in a network of inflammation proteins predicts clinical outcome after myocardial infarction. *BMC Med Genomics* **4**, 59 (2011). https://doi.org/10.1186/1755-8794-4-59
 
 
 # Resumo
 
-> Escreva um breve do artigo (com as suas palavras, não deve ser copiado texto do artigo).
+Visto que a inflamação é de grande importância para o reparo cardíaco após o infarto do miocárdio (IM), o artigo descreve uma investigação da interação entre as proteínas relacionadas à inflamação, seguida da avaliação do conhecimento derivado de uma rede complexa para dar suporte às decisões clínicas após o IM.
+
+O grafo mencionado foi batizado como My-Inflamome, sendo que ele consiste em uma rede de interação proteína-proteína (IPP) relacionada à inflamação e ao diagnóstico da doença em questão. Nesse grafo, os autores estabeleceram associações entre as propriedades da rede, a biologia da doença e a capacidade de distinção entre as categorias prognósticas.
+
+Como conclusão, segue que o estudo relatado pelo artigo eleva o entendimento da rede de IPP que executa as respostas inflamatórias no IM humano. Além disso, seguindo o foco principal do artigo, as informações codificadas na rede complexa podem ser traduzidas em conhecimento com potencial aplicação prognóstica para pacientes após o infarto do miocárdio.
 
 
 # Breve descrição do experimento/análise do artigo que foi replicado
