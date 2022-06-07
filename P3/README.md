@@ -27,14 +27,23 @@ Como conclusão, segue que o estudo relatado pelo artigo eleva o entendimento da
 
 # Breve descrição do experimento/análise do artigo que foi replicado
 
-> Descreva brevemente a parte do artigo cujo experimento ou análise foi reproduzido. Explique o que foi usado como entrada e saída.
+Tomando a lista de interações entre proteínas que caracteriza a rede complexa como a entrada - sendo que transformamos a página `My-Inflamome` do *dataset* em um arquivo CSV pensado para a construção do grafo no `Cytoscape` ([My-Inflamome_ppi_data.csv](data/interim/My-Inflamome_ppi_data.csv)) -, reproduzimos as análises descritas no artigo que foram aplicadas nas fases iniciais de desenvolvimento do My-Inflamome.
+
+É válido ressaltar que o *dataset* da rede complexa em questão resultou de um longo processo aplicado pelos autores. Primeiramente, foram listados os bioindicadores conhecidos no contexto de inflamação pós-IM. Em seguida, essa lista foi expandida em um conjunto de sementes, adicionando genes relacionados funcionalmente com os biomarcadores, que foi usado para compor *queries* em diversas bases de dados de IPP. Portanto, por considerarmos que esse processamento não faz parte do foco desse projeto, além de não possuirmos conhecimentos suficientes para tal, não reproduzimos a montagem do conjunto de dados que define o My-Inflamome.
+
+As tais análises descritas no artigo consistiram, inicialmente, no levantamento de características topológicas da rede no nível dos nós, sendo elas *node degree* e *traffic*. De modo que *node degree* refere-se ao grau do nó, isto é, ao número de arestas que estão ligadas a um nó. *traffic*, ou *betweenness centrality*, por sua vez, refere-se ao número de caminhos mínimos que passam por um nó e que ligam dois outros nós na rede.
+
+Em seguida, foi analisada a *network modularity*, ou modularidade da rede, que pode ser definida como a análise das sub-redes altamente interconectadas que compõem o My-Inflamome. Os módulos da rede complexa descritos no artigo foram identificados a partir de um algoritmo guloso que maximiza o *score* de modularidade.
+
+Como saída das análises replicadas (*node degree*, *traffic* e *network modularity*) no `Cystocape`, obtivemos uma tabela em que cada registro associa um nó às suas características topológicas e a um módulo específico ([My-Inflamome_analyzed_network.csv](data/processed/My-Inflamome_analyzed_network.csv)).
 
 
 ## Dados usados como entrada
 
-Dataset | Endereço na Web | Resumo descritivo
------ | ----- | -----
-Título do Dataset | http://base1.org/ | Breve resumo (duas ou três linhas) sobre o dataset.
+| Dataset | Endereço na Web | Resumo descritivo |
+| ------- | --------------- | ----------------- |
+| 12920_2011_252_MOESM1_ESM | https://static-content.springer.com/esm/art%3A10.1186%2F1755-8794-4-59/MediaObjects/12920_2011_252_MOESM1_ESM.XLS | Arquivo XLS que contém uma relação entre os biomarcadores e suas sementes (`Seeds`), a lista de arestas da rede complexa (`My-Inflamome`) e a descrição de cada um dos módulos identificados na rede (`module1`, …, `module21`).
+
 
 
 # Método
