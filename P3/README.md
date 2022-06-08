@@ -124,7 +124,7 @@ _**Tabela 1:** Top-10 proteínas com maior traffic na rede My-Inflamome do exper
 
 _**Tabela 2:** Top-10 proteínas com maior betweenness centrality na rede My-Inflamome reproduzida no nosso experimento._
 
-Partindo para a análise da modularidade da rede, foi descrita no artigo a identificação de 21 sub-redes altamente interconectadas, como ilustrado pela Figura 3. Além disso, carac
+Partindo para a análise da modularidade da rede, foi descrita no artigo a identificação de 21 sub-redes altamente interconectadas, como ilustrado pela Figura 3.
 
 ![Visualização da rede My-Inflamome e dos módulos gerados no experimento do artigo
 ](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2F1755-8794-4-59/MediaObjects/12920_2011_Article_252_Fig2_HTML.jpg?as=webp)
@@ -164,7 +164,7 @@ Começando pelo resultado obtido utilizando o FastGreedy do *app* CyFinder, obti
 
 _**Figura 4:** Visualização da rede My-Inflamome usando os clusters gerados pela FastGreedy como atributo do layout._
 
-![Figura 5](assets/”FastGreedy Submodulos”.png)
+![Figura 5](assets/FastGreedy_Submodulos.png)
 
 _**Figura 5:** Visualização dos módulos/clusters gerados usando o FastGreedy._
 
@@ -205,7 +205,7 @@ De maneira semelhante, usando a Community Cluster (GLay) do app clusterMaker2, o
 
 _**Figura 6:** Visualização da rede My-Inflamome usando os clusters gerados pela Community Cluster (GLay) como atributo do layout._
 
-![Figura 7](assets/”GLay Submodulos”.png)
+![Figura 7](assets/GLay_Submodulos.png)
 
 _**Figura 7:** Visualização dos módulos/clusters gerados usando o Community Cluster (GLay)._
 
