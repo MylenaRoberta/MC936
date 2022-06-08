@@ -48,8 +48,26 @@ Como saída das análises replicadas (*node degree*, *traffic* e *network modula
 
 # Método
 
-> Método usado para a análise -- adaptações feitas, ferramentas utilizadas, abordagens de análise adotadas e respectivos algoritmos.
-> Etapas do processo reproduzido.
+Segundo o artigo, o My-Inflamome é composto por `2595` proteínas e `6181` interações, no entanto, o *dataset* disponibilizado corresponde somente ao maior componente de rede interconectado (ilha). O autor concentrou suas análises nessa ilha, que possui `2532` proteínas e `6131` interações, todavia, ao começarmos a trabalhar com os dados, identificamos somente `2531` proteínas e `6131` interações. Analisando o arquivo fornecido, dada a diferença entre o número de proteínas informado no artigo e o disponibilizado no *dataset*, concluímos que possivelmente houve algum equívoco na disponibilização dos dados.
+
+Utilizamos o *software* `Cytoscape` para realizar as análises iniciais, com a ferramenta *Analyze Network*, fizemos um levantamento de diversas características topológicas da rede, como *node degree* e *edge betweenness*. Partindo dessa análise, foi possível reproduzirmos algumas das análises apresentadas no artigo. 
+
+Vale ressaltar que no artigo a propriedade *betweenness centrality* é apresentada como a propriedade *traffic* em valores absolutos, essa abordagem é diferente da adotada por nós, na qual o valor de *betweenness centrality* de cada proteína está descrito em valores relativos.
+
+No artigo, a identificação de módulos foi feita aplicando um algoritmo de clusterização guloso (*“greedy” network clustering algorithm*) utilizando o *software* `PolarMapper`. Usando a referência do artigo e fazendo buscas externas por essa ferramenta, não a encontramos disponível, portanto optamos por continuar fazendo uso do `Cytoscape`.
+
+Como mencionado, a clusterização empregada pelos autores foi realizada utilizando um algoritmo guloso com o fim de maximizar um *score* de modularidade, sendo ele definido com base no número de arestas em um módulo e o número total de arestas na rede. Nesse passo, substituímos o *score* original, que se mostrou um cálculo complexo, pela *edge betweenness* gerada pelo *Analyze Network*.
+
+Ainda fazendo uso do `Cytoscape`, buscamos por extensões que permitissem a realização de clusterização para a identificação de módulos em uma rede. Após explorarmos uma quantidade considerável de opções, chegamos a duas que apresentam um funcionamento semelhante ao descrito no artigo.
+
+Fizemos uso da ferramenta *community detection* usando o FastGreedy presente no *app* [CyFinder](https://apps.cytoscape.org/apps/cyfinder). Segundo a [documentação](https://mondallab.cs.fiu.edu/wp-content/uploads/sites/50/2022/02/CyFinder-Tutorial_Final.pdf), esse é o algoritmo com melhor performance do *app*, sendo possível definir a estrutura utilizada como peso, de modo que optamos pelo *edge betweenness*. Seu funcionamento consiste em, inicialmente, criar comunidades com um único nó, e, a cada passo, mesclar duas comunidades de maneira a maximizar a modularidade, sempre levando em conta o peso das arestas.
+
+A ferramenta Community Cluster (GLay) do *app* [clusterMaker2](http://www.rbvi.ucsf.edu/cytoscape/clusterMaker2/#fastGreedy) também foi usada. Segundo a [documentação](http://www.rbvi.ucsf.edu/cytoscape/clusterMaker2/#communityClustering), essa ferramenta é uma implementação do algoritmo guloso de Girvan-Newman, *Girvan-Newman fast greedy algorithm*. Uma vez que esse algoritmo opera somente na conectividade dos nós, não há como definir um peso.
+
+Durante a exploração de recursos, nos deparamos com algumas ferramentas não funcionais, como a FastGreedy do *app* clusterMaker2, que seria útil para comprar com o resultado obtido com a mesma ferramenta de um *app* diferente. Ainda, ao tentarmos utilizar a  *community detection* do *app* CyFinder, empregando *edge betweenness* como o peso, o carregamento do processo trava durante o processamento da rede baseado no algoritmo de Girvan Newman.
+
+Partindo dos resultados obtidos com a FastGreedy e a GLay, utilizando o Python com a biblioteca `pandas` e o `Google Colab`, realizamos algumas análises sobre as características topológicas da rede replicada e sobre os módulos gerados. Os códigos das operações realizadas podem ser vistas no *notebook* [My_Inflamome_network_analysis.ipynb](notebooks/My_Inflamome_network_analysis.ipynb).
+
 
 
 # Resultados
