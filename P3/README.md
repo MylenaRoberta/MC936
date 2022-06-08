@@ -124,3 +124,175 @@ _**Tabela 1:** Top-10 proteínas com maior traffic na rede My-Inflamome do exper
 
 _**Tabela 2:** Top-10 proteínas com maior betweenness centrality na rede My-Inflamome reproduzida no nosso experimento._
 
+Partindo para a análise da modularidade da rede, foi descrita no artigo a identificação de 21 sub-redes altamente interconectadas, como ilustrado pela Figura 3. Além disso, carac
+
+![Visualização da rede My-Inflamome e dos módulos gerados no experimento do artigo
+](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2F1755-8794-4-59/MediaObjects/12920_2011_Article_252_Fig2_HTML.jpg?as=webp)
+
+_**Figura 3:** Visualização da rede My-Inflamome e dos módulos gerados no experimento do artigo._
+
+| Module | NP | IntraMI | InterMI | TotInt | MTraffic |
+|--|--|--|--|--|--|
+1 | 11 |    10 |    8     |  18| 38
+2 | 19 |    18 |    21 |    39 | 36
+3 | 52 |    52 |    41 |    93 | 102
+4 | 132 |    153 |    122 |    275 |    262
+5 | 437 |    587 |    391 |    978 |    872
+6 | 252 |    268 |    212 |    480 |    502
+7 | 127 |    148 |    105 |    253 |    252
+8 | 265 |    317 |    183 |    500 |    528
+9 | 13    | 15 |    7 |    22 |    24
+10 | 507 |    1589 |    610 |    2199 |    1012
+11 | 5 |    4 |    1 |    5    | 8
+12 | 6 |    5 |    7 |    12 |    10
+13 | 39 |    49 |    11 |    60 |    82.16
+14 | 65 |    84 |    41 |    125 |    128
+15 | 118 |    131 |    59    | 190 |    234
+16 | 460 |    863 |    307    | 1170 |    918
+17 | 3 |    2 |    2 |    4 |    4
+18 | 7 |    6 |    2 |    8 |    12
+19 | 5 |    4 |    2 |    6 |    8
+20 | 4 |    3 |    1 |    4 |    6
+21 | 5 |    4 |    1 |    5 |    8
+
+_**Tabela 3:** Descrição topológica dos módulos do My-Inflamome apresentada no artigo. NP: número de proteínas, IntraMI: número de interações intramodulares, InterMI: número de interações intermodulares, TotInt: número total de interações e MTraffic: traffic médio._
+
+
+Começando pelo resultado obtido utilizando o FastGreedy do *app* CyFinder, obtivemos 24 módulos para essa abordagem.
+
+![Figura 4](assets/FastGreedy.png)
+
+_**Figura 4:** Visualização da rede My-Inflamome usando os clusters gerados pela FastGreedy como atributo do layout._
+
+![Figura 5](assets/”FastGreedy Submodulos”.png)
+
+_**Figura 5:** Visualização dos módulos/clusters gerados usando o FastGreedy._
+
+Organizados os dados obtidos, usando a biblioteca `pandas`, foi possível chegar a Tabela 4, uma reprodução da Tabela 3. Vale ressaltar que os valores referentes as arestas/interações não foram levantados, outra simplificação aplicada foi a substituição do MTraffic(_traffic médio_) pelo MBC(_ betweenness centrality médio_).
+
+| Module | NP | MBC|
+|--|--|--|
+1 |    43    | 1.52E-03
+2 |    298    | 1.12E-03
+3 |    36    | 1.31E-03
+4 |    180    | 1.40E-03
+5 |    66    | 1.15E-03
+6 |    101    | 1.30E-03
+7 |    179    | 1.44E-03
+8 |    38    | 1.38E-03
+9 |    27    | 1.29E-03
+10 |    39    | 1.16E-03
+11 |    104    | 1.60E-03
+12 |    266    | 1.20E-03
+13 |    145    | 1.10E-03
+14 |    79    | 1.18E-03
+15 |    58    | 1.27E-03
+16 |    70    | 1.21E-03
+17 |    293    | 1.02E-03
+18 |    20    | 1.39E-03
+19 |    103    | 1.16E-03
+20 |    88    | 0.99E-03
+21 |    42    | 1.15E-03
+22 |    30    | 1.16E-03
+23 |    85    | 1.06E-03
+24 |    142    | 1.06E-03
+
+_**Tabela 4:** Topologia dos módulos gerados utilizando o FastGreedy. NP: número de proteínas, MBC: betweenness centrality médio_
+
+De maneira semelhante, usando a Community Cluster (GLay) do app clusterMaker2, obtivemos 23 módulos.
+
+![Figura 6](assets/GLay.png)
+
+_**Figura 6:** Visualização da rede My-Inflamome usando os clusters gerados pela Community Cluster (GLay) como atributo do layout._
+
+![Figura 7](assets/”GLay Submodulos”.png)
+
+_**Figura 7:** Visualização dos módulos/clusters gerados usando o Community Cluster (GLay)._
+
+De maneira semelhante ao caso anterior, obtivemos  a Tabela 5 como uma reprodução da Tabela 3.
+
+| Module | NP | MBC|
+|--|--|--|
+1 |    450    | 1.43E-3
+2 |    505    | 1.70E-3
+3 |    256    | 1.14E-3
+4 |    153    | 8.50E-4
+5 |    428    | 9.74E-4
+6 |    5    | 6.54E-4
+7 |    85    | 1.11E-3
+8 |    125    | 1.03E-3
+9 |    58    | 9.59E-4
+10 |    10    | 7.72E-4
+11 |    39    | 9.89E-4
+12 |    7    | 7.28E-4
+13 |    13    | 7.38E-4
+14 |    245    | 9.01E-4
+15 |    4    | 5.93E-4
+16 |    34    | 9.94E-4
+17 |    65    | 9.43E-4
+18 |    19    | 8.68E-4
+19 |    11    | 9.74E-4
+20 |    3    | 5.35E-4
+21 |    5    | 6.32E-4
+22 |    5    | 6.32E-4
+23 |    6    | 1.22E-3
+
+_**Tabela 5:** Topologia dos módulos gerados utilizando o Community Cluster (GLay). NP: número de proteínas, MBC: betweenness centrality médio_
+
+Voltando o foco da análise agora para o número de proteínas presentes em cada módulo, partindo da Tabela 3, percebemos que esse valor está no intervalo de 3 a 507 no artigo, com um número significativo de módulos apresentando menos de 20 proteínas.
+
+Fazendo uso da ferramenta FastGreedy, chegamos a 24 módulos (Tabela 4), apesar deste método resultar em mais grupos, as proteínas estão espalhadas de maneira mais uniforme se comparadas com os resultados originais. Nesse caso, o menor módulo apresenta 20 proteínas enquanto o maior apresenta 298. 
+Já os resultados obtidos utilizando o Community Cluster (GLay) (Tabela 5), apresentaram 23 módulos, sendo que o número de proteínas em cada um varia de 3 a 505. Dos 23 módulos resultantes, 12 apresentam a mesma quantidade de proteínas que módulos citados no artigo, correlação que pode ser observada na Tabela 6.
+
+Modulo(Artigo) | NP (Artigo) | Modulo(GLay)|NP(GLay)|Diferença NP
+|--|--|--|--|--|
+1 |    11    |    19 |     11     |    0
+2 |    19    |    18 |     19     |    0
+3 |    52    |    9     | 58         | 6
+4 |    132    |    4     | 153     |    21
+5 |    437    |    5     | 428     |    9
+6 |    252    |    14 |     245 |        7
+7 |    127    |    8     | 125     |    2
+8 |    265    |    3     | 256     |    9
+9 |    13    |    13 |     13     |    0
+10 |    507 | 2 |    505 |    2
+11 |    5         | 21 |    5 |        0
+12 |    6         | 23 |    6 |        0 
+13 |    39     |     11 |    39 |        0
+14 |    65     |     17 |    65 |        0
+15 |    118 | 7 |    85 |        33
+16 |    460 |    1 |    450 |        10
+17 |    3         | 20    | 3    |    0
+18 |    7         | 12 | 7    |    0
+19 |    5         | 22 |    5    |    0
+20 |    4         | 15 |    4    |    0
+21 |    5         | 6 |    5    |    0
+|    |        16 |    34    |    34
+|    |        10    |10        |10
+
+_**Tabela 6:** Comparação entre a quantidade de proteínas presente em cada módulo resultante no antigo e na reprodução utilizando o método GLay_
+
+Agora, trazendo as propriedades *traffic* e *betweenness centrality* para o foco, lembrando das diferenças e correções envolvendo esses atributos, percebemos que no artigo o *traffic* está fortemente correlacionado com a quantidade de proteínas no módulo. Esse mesmo padrão não é notório na reprodução do experimento, de modo que não é perceptível nenhuma relação entre o número de proteínas no módulo e a MBC, média da *betweenness centrality*. 
+
+Embora a quantidade de módulos gerados por ambos FastGreedy e GLay não esteja de acordo com o que é apresentado no artigo, era de nosso interesse verificar se a distribuição das proteínas nos módulos era semelhante. Ao levantarmos a quais módulos as proteínas do top-10 de *traffic*/*betweenness centrality*, geramos uma tabela comparativa.
+
+Observando a Tabela 7, podemos notar que a distribuição dessas proteínas após a clusterização pelo GLay segue a mesma lógica apresentada no artigo. Isto é, as proteínas que apareceram em um mesmo módulo continuam unidas e as que estão em módulos distintos continuam separadas.
+
+| Proteína | Módulo Original | Módulo GLay | Módulo FastGreedy |
+|--|--|--|--|
+| MYC  | 6 | 14 | 2 |
+| IKBKE | 5 | 5 | 12 |
+| TRAF6 | 5 | 5 | 17 |
+| TP53 | 8 | 3 | 4 |
+| EGFR | 16 | 1 | 7 |
+| TRAF2 | 10 | 2 | 13 |
+| MAP3K3 | 10 | 2 | 24 |
+| IKBKG | 10 | 2 | 19 |
+| GRB2 | 16 | 1 | 12 |
+| UBC | 10 | 2 | 11 |
+
+_**Tabela 7:** Distribuição das proteínas do top-10 de traffic nos módulos de cada tipo de clusterização aplicada._
+
+Dada a análise dessa pequena amostra nós da rede complexa, juntamente com a distribuição das proteínas entre os módulos, acreditamos que a clusterização por GLay gerou resultados mais próximos dos originais do que a por FastGreedy. Todavia, dadas todas as divergências citadas anteriormente, sabemos que a nossa replicação não corresponde exatamente aos resultados descritos no artigo. Mas podemos levantar a hipótese de que eles são suficientemente semelhantes.
+
+É válido ressaltar que as simplificações nos métodos de análise e, especialmente, o uso de um algoritmo de clusterização distinto corroboraram para os resultados consideravelmente distantes. Ademais, a inconsistência que citamos sobre o *dataset* disponibilizado também pode ter contribuído para não alcançarmos precisamente o que foi descrito no artigo.
