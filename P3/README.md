@@ -72,6 +72,53 @@ Partindo dos resultados obtidos com a FastGreedy e a GLay, utilizando o Python c
 
 # Resultados
 
-> Apresente os resultados obtidos pela sua adaptação.
-> Confronte os seus resultados com aqueles do artigo.
-> Esta seção opcionalmente pode ser apresentada em conjunto com o método.
+Como mencionado, analisamos as propriedades da réplica da rede `My-Inflamome`, em especial replicamos as análises feitas em relação ao grau dos nós (*node degree*) e *betweenness centrality*, que o artigo denomina de *traffic*.
+
+Nos resultados do artigo, temos um valor médio de *node degree* igual a `4.25`, no entanto, em nossa análise obtivemos `4.85` como a média para essa propriedade. A explicação para essa diferença está relacionada ao fato de que o grau de muitas proteínas na nossa réplica da rede está maior do que o descrito no artigo. 
+
+No artigo, foi apresentada a correlação de Spearman entre as propriedades *node degree* e *traffic* nos nós da rede, chegando ao resultado de `0.93`, o que indica uma forte correlação entre as duas propriedades. Em nosso experimento, replicando essa análise de correlação utilizando a propriedade *betweenness centrality*, a correlação de Spearman resultou em `0.89`, valor menor do que o obtido no artigo, mas que ainda indica uma forte relação entre as propriedades. Tal diferença também pode ser atribuída a diferença entre os graus dos nós do nosso experimento para o original ou pela diferença da abordagem no uso da propriedade *betweenness centrality*.
+
+Dada a forte correlação entre *node degree* e *traffic* na rede, é apresentado no artigo um gráfico no qual a propriedade *traffic* é plotada em função do *degree* de cada proteína na rede. No nosso experimento, replicamos esse gráfico, plotando a propriedade *betweenness centrality* em função do *node degree* para cada proteína.
+
+Notamos que a nossa reprodução (Figura 2) se assemelha bastante ao gráfico apresentado no artigo (Figura 1). Sendo que as principais diferenças são os valores apresentados no eixo y, o que se deve a diferença no uso da propriedade *traffic*, e a mudança no posicionamento de algumas proteínas no gráfico, que, além da diferença no *traffic*, é explicado pelo aumento no valor do *node degree* de algumas proteínas em nosso experimento.
+
+![degree_traffic_paper](assets/degree_vs_traffic_paper.png)
+_**Figura 1:** Correlação entre entre node degree e traffic na rede My-Inflamome apresentada no artigo._
+
+![degree_traffic_ours](assets/degree_vs_traffic_ours.png)
+_**Figura 2:** Correlação entre degree e betweenness centrality na rede My-Inflamome reproduzida no nosso experimento._
+
+Nas análises do artigo, os autores optaram pelo aprofundamento nas 10 proteínas da rede que apresentaram os maiores valores de *traffic* (Tabela 1). Visando verificar se a mesma lista de proteínas podia ser obtida em nossa replicação, dispusemos em ordem decrescente pelo valor de *betweenness centrality* as proteínas da rede e fizemos um recorte com as 10 primeiras da lista, como mostrado na Tabela 2.
+
+Comparando a Tabela 2 com a Tabela 1, observamos que a nossa reprodução do top-10 proteínas com maior *traffic* obteve a mesma lista de proteínas, inclusive na mesma ordem da obtida no artigo. Notamos ainda uma diferença no valor do *node degree* para cada proteína. Em nossa rede, todas as proteínas mostradas na Tabela 2, apresentam um aumento no valor do *node degree* quando comparamos com os resultados do artigo mostrados na Tabela 1.
+
+| Proteína | Node degree | Traffic |
+|--|--|--|
+| MYC  | 330 |1.10E+06 |
+| IKBKE | 337 |1.08E+06 |
+| TRAF6 | 347 |1.03E+06 |
+| TP53 | 192 | 7.77E+05|
+| EGFR | 167 | 7.26E+05 |
+| TRAF2 | 136| 5.13E+05 |
+| MAP3K3 | 164 |4.07E+05 |
+| IKBKG | 142 | 3.28E+05 |
+| GRB2 | 28 | 3.08E+05 |
+| UBC | 33 | 2.99E+05 |
+
+_**Tabela 1:** Top-10 proteínas com maior traffic na rede My-Inflamome do experimento original._
+
+| Proteína | Node degree | Betweenness centrality |
+|--|--|--|
+| MYC  | 347 | 1.71E-01 |
+| IKBKE | 346 | 1.68E-01 |
+| TRAF6 | 362 | 1.59E-01
+| TP53 | 258 | 1.21E-01 |
+| EGFR | 188 | 1.13E-01 |
+| TRAF2 | 151| 7.94E-02 |
+| MAP3K3 | 176 | 6.28E-02 |
+| IKBKG | 159 | 5.04E-02 |
+| GRB2 | 32 | 4.74E-02 |
+| UBC | 41 | 4.59E-02|
+
+_**Tabela 2:** Top-10 proteínas com maior betweenness centrality na rede My-Inflamome reproduzida no nosso experimento._
+
