@@ -83,9 +83,11 @@ Dada a forte correlação entre *node degree* e *traffic* na rede, é apresentad
 Notamos que a nossa reprodução (Figura 2) se assemelha bastante ao gráfico apresentado no artigo (Figura 1). Sendo que as principais diferenças são os valores apresentados no eixo y, o que se deve a diferença no uso da propriedade *traffic*, e a mudança no posicionamento de algumas proteínas no gráfico, que, além da diferença no *traffic*, é explicado pelo aumento no valor do *node degree* de algumas proteínas em nosso experimento.
 
 ![degree_traffic_paper](assets/degree_vs_traffic_paper.png)
+
 _**Figura 1:** Correlação entre entre node degree e traffic na rede My-Inflamome apresentada no artigo._
 
 ![degree_traffic_ours](assets/degree_vs_traffic_ours.png)
+
 _**Figura 2:** Correlação entre degree e betweenness centrality na rede My-Inflamome reproduzida no nosso experimento._
 
 Nas análises do artigo, os autores optaram pelo aprofundamento nas 10 proteínas da rede que apresentaram os maiores valores de *traffic* (Tabela 1). Visando verificar se a mesma lista de proteínas podia ser obtida em nossa replicação, dispusemos em ordem decrescente pelo valor de *betweenness centrality* as proteínas da rede e fizemos um recorte com as 10 primeiras da lista, como mostrado na Tabela 2.
