@@ -1,5 +1,5 @@
-# Projeto `<Título em Português>`
-# Project `<Title in English>`
+# Projeto Classificação por SVM de lesões de substância branca causadas por LES
+# Project SVM classification of white matter lesions caused by SLE
 
 # Apresentação
 
@@ -14,7 +14,13 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
 # Introdução
 
-> Apresentação de forma resumida do problema (contexto) e a pergunta que se quer responder.
+Este projeto objetiva-se responder à seguinte pergunta de pesquisa da Dra. Simone Appenzeller, Professora Associada de Reumatologia da Faculdade de Ciências Médicas (FCM) da Unicamp:
+
+> Qual é a etiologia mais provável das lesões de substância branca presentes em pacientes com Lúpus Eritematoso Sistêmico (LES)?
+
+A fim de tentarmos encontrar uma resposta satisfatória, treinamos um classificador SVM (*Support Vector Machine*) para diferenciar lesões isquêmicas e desmielinizantes e, por conseguinte, predizer a etiologia mais provável das lesões de substância branca presentes nos indivíduos com LES.
+
+O treinamento mencionado foi realizado com imagens de ressonância do cérebro de pacientes que sofreram Acidente Vascular Cerebral (AVC) ou têm Esclerose Múltipla (EM). Sendo que AVC e EM são capazes de causar, respectivamente, lesões de substância branca denominadas isquêmicas e desmielinizantes.
 
 
 ## Ferramentas
