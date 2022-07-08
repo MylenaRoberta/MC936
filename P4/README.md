@@ -216,21 +216,21 @@ Diante do que obtivemos nas análises dos resultados da predição do classifica
 
 * O preditor pode estar enviesado para classificar lesões como isquêmicas, o que pode explicar a maior quantidade de cortes classificados como AVC. 
 
-Isto é, pode ser que a nossa engenharia de atributos não tenha produzido os melhores resultados praticáveis. Além disso, uma vez que boa parte das *features* de textura têm relação com a área da lesão, supomos que a correlação entre alguns dos atributos possa ter gerado *overfitting* do modelo.
+    Isto é, pode ser que a nossa engenharia de atributos não tenha produzido os melhores resultados praticáveis. Além disso, uma vez que boa parte das *features* de textura têm relação com a área da lesão, supomos que a correlação entre alguns dos atributos possa ter gerado *overfitting* do modelo.
 
-Por exemplo, ao plotarmos Área x RLU para os *clusters* de pacientes com LES, como pode ser observado na Figura 10, é notável uma relação linear e diretamente proporcional entre essas *features*. Assim, verificamos que há uma correlação entre elas.
+    Por exemplo, ao plotarmos Área x RLU para os *clusters* de pacientes com LES, como pode ser observado na Figura 10, é notável uma relação linear e diretamente proporcional entre essas *features*. Assim, verificamos que há uma correlação entre elas.
 
-![area_vs_rlu](assets/area_vs_rlu.png) 
+    ![area_vs_rlu](assets/area_vs_rlu.png) 
 
 _**Figura 10:** Área x RLU utilizando as *features* dos pacientes com LES._
 
 * A etiologia mais provável das lesões de substância branca presentes em pacientes com Lúpus Eritematoso Sistêmico é de fato isquêmica.
 
-Dado que estamos tentando responder uma pergunta de pesquisa real, ainda não existe uma explicação concreta para o que este projeto está tentando solucionar. Dessa forma, pode ser que os resultados que obtivemos neste projeto estejam corretos.
+    Dado que estamos tentando responder uma pergunta de pesquisa real, ainda não existe uma explicação concreta para o que este projeto está tentando solucionar. Dessa forma, pode ser que os resultados que obtivemos neste projeto estejam corretos.
 
 * A etiologia das lesões de substância branca presentes em pacientes com Lúpus Eritematoso Sistêmico é de um tipo ainda não definido pela medicina.
 
-Também é possível que a real etiologia das lesões de LES combine características de lesões isquêmicas e desmielinizantes. Ou seja, essas lesões podem, na realidade, ter uma etiologia única de acordo com as definições estabelecidas pela medicina.
+    Também é possível que a real etiologia das lesões de LES combine características de lesões isquêmicas e desmielinizantes. Ou seja, essas lesões podem, na realidade, ter uma etiologia única de acordo com as definições estabelecidas pela medicina.
 
 
 
