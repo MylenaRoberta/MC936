@@ -35,7 +35,7 @@ O treinamento mencionado foi realizado com imagens de ressonância magnética do
     * `PIL`
     * `scikit-learn`
     * `scipy`
-    * `skimage.` 
+    * `skimage` 
     * `seaborn` 
 * `Google Colab` 
 * `Google Drive`  
