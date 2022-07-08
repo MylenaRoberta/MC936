@@ -135,15 +135,34 @@ _**Tabela 1:** Atributos extraídos do conjunto de imagens._
 
 # Metodologia
 
-> Descreva o classificador escolhido e o pipeline de treinamento:
-* split dos dados de treinamento
-* escolha de parâmetros do classificador
-* validação cruzada
-* métricas de avaliação
-* resultados do treinamento do classificador usando tabelas e gráficos
->
-> Justificar as escolhas.
-> Esta parte do relatório pode ser copiada da Atividade 11, caso o grupo opte por usar o SVM já treinado.
+Como mencionado anteriormente, optamos por utilizar um classificador SVM (*Support Vector Machine*) [3][4] de modo a buscar a resposta para pergunta de pesquisa levantada. O código empregado para todo o desenvolvimento do classificador está no *notebook* [svm_classification.ipynb](notebooks/svm_classification.ipynb).
+
+Em relação ao treinamento do modelo, os dados empregados resultaram da concatenação dos *datasets* de atributos extraídos das imagens de ressonância magnética de pacientes com lesões de substância branca isquêmicas ([avc_features.csv](data/processed/avc_features.csv)) e desmielinizantes ([em_features.csv](data/processed/em_features.csv)).
+
+Em relação a predição, por sua vez, os dados oferecidos ao classificador resultaram do *dataset* de atributos extraídos das imagens de ressonância magnética de pacientes com LES ([les_features.csv](data/processed/les_features.csv)).
+
+É válido ressaltar ainda que, para ambos os conjuntos de treinamento e predição, foi necessário aplicar um pequeno processo de preparação para o uso. Citando os pontos essenciais, foi preciso separar os atributos dos conjuntos em variáveis adequadas para o uso no classificador e também uniformizar os valores das *features* para que o preditor funcionasse adequadamente [5].
+
+Para escolher os hiperparâmetros que definem o modelo, utilizamos de um estimador (GridSearchCV) que realiza uma pesquisa exaustiva sobre valores de parâmetros especificados a ele [6][7][8]. Optamos pelo uso de uma gama ampla de parâmetros, dada a falta de profundidade no conhecimento que temos sobre o domínio do problema e a pouca experiência em desenvolvimento de algoritmos de classificadores.
+
+Ademais, junto ao estimador de hiperparâmetros mencionado, empregamos uma variante do iterador KFold para realizar a validação cruzada dos dados de treinamento do modelo [9]. Essa variante (GroupKFold), de acordo com a documentação, garante que um mesmo grupo não esteja nos conjuntos de teste e treinamento [10][11]. Isto é, no caso do nosso modelo, garante que os cortes associados a um mesmo paciente não estão em ambos os conjuntos de teste e treinamento.
+
+A Tabela 2 apresenta os resultados mais relevantes do treinamento do modelo.
+
+| Rótulo | Resultado |
+| -- | -- |
+| param_C | 1 |
+| param_degree| 1 |
+| param_gamma | 0.1 |
+| param_kernel | rbf |
+| mean_test_score | 0.943324 |
+| std_test_score | 0.030098 |
+| mean_train_score | 0.961087 |
+| std_train_score | 0.00256 |
+
+_T**abela 2:** Principais resultados do treinamento do classificador SVM._
+
+Ao fim, geramos um arquivo CSV ([les_classification.csv](data/processed/les_classification.csv)) que o associa cada predição de etiologia da lesão por LES ao seu respectivo paciente. Esse arquivo serviu como base para analisarmos e tentarmos compreender os resultados obtidos pelo classificador SVM.
 
 
 # Resultados Obtidos e Discussão
