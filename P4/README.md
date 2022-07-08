@@ -187,14 +187,20 @@ Ao fim, geramos um arquivo CSV ([les_classification.csv](data/processed/les_clas
 
 # Conclusão
 
-> Destacar as principais conclusões obtidas no desenvolvimento do projeto.
->
-> Destacar os principais desafios enfrentados.
->
-> Principais lições aprendidas.
->
-> Trabalhos Futuros:
-> * o que poderia ser melhorado se houvesse mais tempo?
+Para alcançar os resultados expostos na seção anterior passamos por diversas dificuldades, a começar pela construção do *pipeline*. Por ser o primeiro contato da equipe com o processamento de imagens, houveram dificuldades em determinar como e quando aplicar cada etapa do processamento. 
+
+Ainda, o tempo de execução dos códigos foi consideravelmente maior neste projeto. Durante alguns testes, certas etapas levaram mais de uma hora para processar, algo que foi amenizado fragmentando o processamento. Finalmente, a análise dos resultados obtidos se mostrou o maior desafio deste projeto, sendo que acreditamos que essa dificuldade seja resultante de vários fatores. Alguns deles são a insegurança no processo proposto por nós, a novidade quanto ao tipo dos dados utilizados e a aplicação de tudo isso a um problema real, envolvendo uma pergunta ainda sem resposta.
+
+Após a execução do *pipeline* apresentado e uma análise sobre os resultados obtidos, foi difícil determinar uma etiologia para as lesões de LES. Visto que, apesar do classificador gerado indicar que tais lesões seriam majoritariamente isquêmicas, há a possibilidade de um viés em seu treinamento. Essa hipótese foi levantada pela falta de familiaridade, por parte da equipe, com o domínio tratado e, também, com a metodologia aplicada. Ademais, é possível que a não aplicação de um seletor de *features* tenha ocasionado em muitos atributos correlacionados, o que pode levar a um *overfitting* do classificador. 
+
+Para afirmar com convicção que alguma das três hipóteses levantadas no tópico anterior se ressalta perante as outras, o *pipeline* utilizado precisa ser aprimorado. Acreditamos que a etapa de seleção de imagens pode ser melhor trabalhada, aplicando um *threshold* mais robusto ou desenvolvendo um método de seleção baseado em outras características além da área. Acrescido a isso, a aplicação de algum tipo de normalização pode ser viável, visando homogeneizar o conjunto de imagens fornecidas, assim, seria interessante estudar e testar as técnicas mais apropriadas buscando a melhor acurácia possível.
+
+Ainda, algum tipo de dilatação poderia ser aplicado às máscaras de modo a minimizar algum erro humano que possa ter ocorrido durante sua delimitação. Esse processo ainda poderia ser realizado de modo a englobar as bordas das lesões, que podem conter informações importantes para auxiliar na distinção entre suas etiologias. Por fim, um PCA (*Principal Component Analysis*)[12] poderia ser aplicado para eliminar as *features* correlacionadas e selecionar aquelas de maior valia para o treinamento do classificador, reduzindo seu possível viés. 
+
+É válido ressaltar que as diferentes melhorias que mencionamos anteriormente foram consideradas durante a execução do projeto, todavia, não houve tempo hábil para que colocássemos tudo em prática. Assim, citamos aqui as escolhas que acreditamos que poderiam fazer a diferença ao serem aplicadas em nosso *pipeline* original e que adicionamos em nossa bagagem para projetos futuros.
+
+Mesmo com certas ressalvas quanto aos resultados obtidos, esse projeto se mostrou essencial para nosso aprendizado, tanto por ser uma primeira experiência usando imagens quanto por se tratar de um problema de pesquisa real que ainda não tem resposta bem definida. Durante a sua execução, aprendemos não só a extrair informações de imagens de diversas maneiras, mas a como desenvolver um *pipeline* para a melhor exploração dessas informações. Além disso, enfrentamos as dificuldades envolvidas no processo e tentamos minimizá-las da melhor forma possível. Assim, acreditamos que esse projeto não só nos embasou para a exploração de um novo tipo de dado, mas nos forneceu senso crítico para lidar com problemas desse gênero no futuro. 
+
 
 
 # Referências Bibliográficas
