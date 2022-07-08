@@ -186,9 +186,52 @@ Ao fim, geramos um arquivo CSV ([les_classification.csv](data/processed/les_clas
 
 # Resultados Obtidos e Discussão
 
-> Esta seção deve apresentar o resultado de predição das lesões de LES usando o classificador treinado. Também deve tentar explicar quais os atributos relevantes usados na classificação obtida
-> * apresente os resultados de forma quantitativa e qualitativa
-> * tenha em mente que quem irá ler o relatório é uma equipe multidisciplinar. Descreva questões técnicas, mas também a intuição por trás delas.
+As análises realizadas sobre os resultados do classificador estão contidas no *notebook* [results_analysis.ipynb](notebook/results_analysis.ipynb). Como base para essas análises, tomamos os *datasets* [avc_features.csv](data/processed/avc_features.csv), [em_features.csv](data/processed/em_features.csv), [les_features.csv](data/processed/les_features.csv) e [les_classification.csv](data/processed/les_classification.csv).
+
+Analisando a distribuição das predições geradas pelo classificador SVM, segue que, aparentemente, a etiologia mais provável das lesões de substância branca presentes em pacientes com LES é isquêmica. Uma vez que cerca de 75% dos cortes de lesões que foram testados no classificador receberam o *target* AVC como caracterização.
+
+Todavia, verificamos que uma parcela significativa dos pacientes não tiveram todos os cortes de suas lesões classificadas com a mesma etiologia. Observando especificamente os cortes das lesões causadas por LES do paciente 634, segue que seis deles passaram pelo nosso *pipeline*. Tínhamos a expectativa de que todos, ou ao menos a grande maioria, das ROIs seriam classificadas de uma mesma maneira para os pacientes. Entretanto, como mostram as Figuras 8 e 9, temos que metade dos cortes do paciente 634 foram rotulados como AVC e outra metade como EM. Portanto, não podemos afirmar com convicção qual é a etiologia mais provável dessas lesões de substância branca. 
+
+![patient_634_cuts_avc](assets/patient_634_cuts_avc.png) 
+
+_**Figura 8:** ROIs dos cortes das lesões do paciente 634 que foram classificados como AVC._
+
+![patient_634_cuts_em](assets/patient_634_cuts_em.png) 
+
+_**Figura 9:** ROIs dos cortes das lesões do paciente 634 que foram classificados como EM._
+
+De modo a verificar as distribuições das classificações dos cortes das lesões dos pacientes de LES, separamos os indivíduos em três *clusters*:
+
+* AVC: pacientes que tiveram 70% ou mais dos cortes classificados como AVC.
+* EM: pacientes que tiveram 70% ou mais dos cortes classificados como EM.
+* INCERTO: pacientes não incluídos nos grupos AVC ou EM.
+
+Segmentados os *clusters*, notamos que cerca de 32% dos pacientes estão em INCERTO e aproximadamente 5% estão em EM. Logo, segue que a maioria dos pacientes (quase 63%) está de fato em AVC, porém há uma relevante parcela de indivíduos com lesões nas quais o classificador não definiu com convicção suficiente, de acordo com os nossos critérios, a etiologia mais provável.
+
+Fazendo uma análise geral sobre os resultados obtidos, levantamos a hipótese que a área era um dos atributos com maior influência na classificação. De maneira que fomos surpreendidos ao verificar que tanto as imagens com as 10 maiores áreas quanto as com as 10 menores áreas foram classificadas como isquêmicas, mais detalhes das features desses cortes com áreas extremas pode ser encontrado no *notebook* [results_analysis.ipynb](notebook/results_analysis.ipynb) . Possivelmente estávamos com um olhar enviesado uma vez que já sabíamos que lesões de EM e de LES tendem a ser menores. De qualquer modo, acreditamos que a área tem grande influência em todo o processo de maneira indireta, uma vez que estamos trabalhando com features de textura desconsiderando o background.
+
+Outra hipótese levantada para a dificuldade de geração de resultados consistentes para um mesmo paciente pode estar relacionada ao fato das lesões por LES serem majoritariamente menores. Por consequência das menores áreas, as *features* extraídas dessas imagens apresentam uma menor riqueza de detalhes, o que pode acarretar em dados ruidosos a respeitos das lesões causadas por essa doença.
+
+Diante do que obtivemos nas análises dos resultados da predição do classificador SVM, levantamos três hipóteses distintas:
+
+* O preditor pode estar enviesado para classificar lesões como isquêmicas, o que pode explicar a maior quantidade de cortes classificados como AVC. 
+
+Isto é, pode ser que a nossa engenharia de atributos não tenha produzido os melhores resultados praticáveis. Além disso, uma vez que boa parte das *features* de textura têm relação com a área da lesão, supomos que a correlação entre alguns dos atributos possa ter gerado *overfitting* do modelo.
+
+Por exemplo, ao plotarmos Área x RLU para os *clusters* de pacientes com LES, como pode ser observado na Figura 10, é notável uma relação linear e diretamente proporcional entre essas *features*. Assim, verificamos que há uma correlação entre elas.
+
+![area_vs_rlu](assets/area_vs_rlu.png) 
+
+_**Figura 10:** Área x RLU utilizando as *features* dos pacientes com LES._
+
+* A etiologia mais provável das lesões de substância branca presentes em pacientes com Lúpus Eritematoso Sistêmico é de fato isquêmica.
+
+Dado que estamos tentando responder uma pergunta de pesquisa real, ainda não existe uma explicação concreta para o que este projeto está tentando solucionar. Dessa forma, pode ser que os resultados que obtivemos neste projeto estejam corretos.
+
+* A etiologia das lesões de substância branca presentes em pacientes com Lúpus Eritematoso Sistêmico é de um tipo ainda não definido pela medicina.
+
+Também é possível que a real etiologia das lesões de LES combine características de lesões isquêmicas e desmielinizantes. Ou seja, essas lesões podem, na realidade, ter uma etiologia única de acordo com as definições estabelecidas pela medicina.
+
 
 
 # Conclusão
