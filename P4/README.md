@@ -20,12 +20,25 @@ Este projeto objetiva-se responder à seguinte pergunta de pesquisa da Dra. Simo
 
 A fim de tentarmos encontrar uma resposta satisfatória, treinamos um classificador SVM (*Support Vector Machine*) para diferenciar lesões isquêmicas e desmielinizantes e, por conseguinte, predizer a etiologia mais provável das lesões de substância branca presentes nos indivíduos com LES.
 
-O treinamento mencionado foi realizado com imagens de ressonância do cérebro de pacientes que sofreram Acidente Vascular Cerebral (AVC) ou têm Esclerose Múltipla (EM). Sendo que AVC e EM são capazes de causar, respectivamente, lesões de substância branca denominadas isquêmicas e desmielinizantes.
+O treinamento mencionado foi realizado com imagens de ressonância magnética do cérebro de pacientes que sofreram Acidente Vascular Cerebral (AVC) ou têm Esclerose Múltipla (EM). Sendo que AVC e EM são capazes de causar, respectivamente, lesões de substância branca denominadas isquêmicas e desmielinizantes.
 
 
 ## Ferramentas
 
-> Listagem das ferramentas utilizadas (na forma de itens).
+* `Python` 
+    * `cv2`  
+    * `glob` 
+    * `glrlm` 
+    * `matplotlib`
+    * `numpy`
+    * `pandas`
+    * `PIL`
+    * `scikit-learn`
+    * `scipy`
+    * `skimage.` 
+    * `seaborn` 
+* `Google Colab` 
+* `Google Drive`  
 
 
 ## Preparo e uso dos dados
@@ -186,6 +199,26 @@ Ao fim, geramos um arquivo CSV ([les_classification.csv](data/processed/les_clas
 
 # Referências Bibliográficas
 
-> Lista de artigos, links e referências bibliográficas (se houver).
->
-> Fiquem à vontade para escolher o padrão de referenciamento preferido pelo grupo.
+[[1](https://homepages.inf.ed.ac.uk/rbf/HIPR2/mask.htm)] Binary Mask
+
+[[2](https://drive.google.com/file/d/1A1ViXtvPXjEajQtdpNuzzsfoGM_Nm0U4/view)] Influence of MR image intensity normalization on texture-based classification of brain white matter lesions
+
+[[3](https://scikit-learn.org/stable/modules/svm)] Support Vector Machines - scikit-learn 1.1.1 documentation
+
+[[4](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC)] sklearn.svm.SVC - scikit-learn 1.1.1 documentation
+
+[[5](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler)] sklearn.preprocessing.StandardScaler - scikit-learn 1.1.1 documentation
+
+[[6](https://tatianaesc.medium.com/implementando-um-modelo-de-classifica%C3%A7%C3%A3o-no-scikit-learn-6206d684b377)] Implementando um Modelo de Classificação no Scikit-Learn | by Tatiana Escovedo | Medium
+
+[[7](https://scikit-learn.org/stable/modules/grid_search)] Tuning the hyper-parameters of an estimator - scikit-learn 1.1.1 documentation
+
+[[8](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV)] sklearn.model_selection.GridSearchCV - scikit-learn 1.1.1 documentation
+
+[[9](https://scikit-learn.org/stable/modules/cross_validation)] Cross-validation: evaluating estimator performance - scikit-learn 1.1.1 documentation
+
+[[10](https://scikit-learn.org/stable/tutorial/statistical_inference/model_selection.html)] Model selection: choosing estimators and their parameters - scikit-learn 1.1.1 documentation
+
+[[11](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GroupKFold)] sklearn.model_selection.GroupKFold - scikit-learn 1.1.1 documentation
+
+[[12](https://www.geeksforgeeks.org/ml-principal-component-analysispca/)] ML | Principal Component Analysis (PCA)
