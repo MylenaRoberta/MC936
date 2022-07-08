@@ -72,6 +72,7 @@ Em nossa abordagem de pré-processamento, optamos por utilizar apenas as imagens
 Durante o processo de seleção das máscaras, observamos que algumas delas estavam extremamente imprecisas, chegando, em alguns casos, a ocupar mais de 50% da imagem. Essas máscaras aparentam destoar bastante em relação ao tamanho das lesões nas imagens originais. Na Figura 2 apresentamos uma máscara “negativa”, onde a região da lesão é a única não demarcada, em preto.
 
 ![mask_error](assets/mask_error.png)  
+
 _**Figura 2:** Exemplo de imagem descartada durante o processo de seleção._
 
 Indo mais a fundo nessa questão, investigamos a distribuição dos pixels para todas as máscaras contidas nos conjuntos de imagens fornecido. Essas investigações, bem como o processo de seleção de imagens, estão codificados no *notebook* [image_selection.ipynb](notebooks/image_selection.ipynb).
@@ -81,12 +82,15 @@ As Figuras 3, 4 e 5, apresentam os *boxplots* das distribuições de pixels nos 
 Assim, consideramos que remover da seleção de imagens, as máscaras que apresentassem mais de 50000 pixels seria um limiar razoável, já que ele está por volta de 25% do tamanho da maioria das imagens.
 
 ![boxplot_avc](assets/boxplot_AVC.png) 
+
 _**Figura 3:** Boxplot da distribuição de pixels das máscaras do conjunto AVC._
 
-![boxplot_em](assets/boxplot_EM.png)  
+![boxplot_em](assets/boxplot_EM.png) 
+
 _**Figura 4:** Boxplot da distribuição de pixels das máscaras do conjunto EM._
 
 ![boxplot_les](assets/boxplot_LES.png)
+
 _**Figura 5:** Boxplot da distribuição de pixels das máscaras do conjunto LES._  
 
 Aplicando os critérios de seleção de imagens citados anteriormente, reduzimos nosso conjunto de imagens aos seguintes valores: 
@@ -101,6 +105,7 @@ Partindo dos conjuntos de imagens selecionados, utilizando as máscaras foi poss
 
 
 ![mask_application](assets/mask_application.png)  
+
 _**Figura 6:** Aplicação da máscara em uma lesão de EM._
  
 ### Extração de atributos
@@ -108,6 +113,7 @@ _**Figura 6:** Aplicação da máscara em uma lesão de EM._
 Ainda que a quantidade de pixels pretos nas imagens tenha diminuído após a aplicação das máscaras nas imagens, executamos os métodos de extração de *features* de maneira a não considerar esses pixels. Esse procedimento foi adotado visando a aplicação de descritores de textura, e, uma vez que as lesões estão concentradas próximas à cor branca, a princípio, acreditamos que os pixels pretos não agregarão na identificação e classificação dessas lesões. Ainda, no caso de múltiplas lesões com um grande espaçamento, o *background* pode corresponder a uma área muito maior que as lesões, o que pode gerar ruído nos dados obtidos, como podemos observar na Figura 7.
 
 ![mask_background](assets/mask_background.png)  
+
 _Figura 7: Lesões de LES com grande espaçamento entre si._
 
 Nessa etapa foram extraídos atributos provenientes do histograma e da textura das imagens, sendo que para essa última fizemos uso da Matriz de Coocorrência (GLCM), Matriz de Comprimento de Corrida (GLRLM) e Local Binary Pattern (LBP). Para todos esses descritores aplicamos modificações para desconsiderar os pixels pretos, sendo que todo o processo de extração dos atributos está detalhado no *notebook* [image_processing.ipynb](notebooks/image_processing.ipynb). 
